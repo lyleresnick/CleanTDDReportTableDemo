@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account Details Transaction List View Controller-->
+        <!--Transaction Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AccountDetailsTransactionListViewController" customModule="CleanTDDReportTableDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionListViewController" id="BYZ-38-t0r" customClass="TransactionListViewController" customModule="CleanReportTableDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="50" id="Bej-hw-nQ9" customClass="HeaderCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="50" id="Bej-hw-nQ9" customClass="TransactionListHeaderCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bej-hw-nQ9" id="JIM-Xq-JZH">
@@ -33,32 +33,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwP-oO-9Xf">
-                                                    <rect key="frame" x="25" y="16" width="28.5" height="17"/>
+                                                    <rect key="frame" x="25" y="16.5" width="28.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F35-QX-jad">
-                                                    <rect key="frame" x="25" y="30" width="47" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="F35-QX-jad" firstAttribute="leading" secondItem="UwP-oO-9Xf" secondAttribute="leading" id="crQ-C8-qzC"/>
                                                 <constraint firstItem="UwP-oO-9Xf" firstAttribute="centerY" secondItem="JIM-Xq-JZH" secondAttribute="centerY" id="fiY-8V-9Ah"/>
                                                 <constraint firstItem="UwP-oO-9Xf" firstAttribute="leading" secondItem="JIM-Xq-JZH" secondAttribute="leading" constant="25" id="sRS-1r-6Ck"/>
-                                                <constraint firstItem="UwP-oO-9Xf" firstAttribute="bottom" secondItem="F35-QX-jad" secondAttribute="top" constant="3" id="sVt-NJ-EJI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1647058824" green="0.4431372549" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="subtitleLabel" destination="F35-QX-jad" id="4qF-cl-OYH"/>
                                             <outlet property="titleLabel" destination="UwP-oO-9Xf" id="Fe6-Vv-Q1f"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Subheader" id="RAb-SX-mTq" customClass="SubheaderCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" id="RAb-SX-mTq" customClass="TransactionListSubheaderCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RAb-SX-mTq" id="wOk-Ql-ttr">
@@ -81,7 +72,7 @@
                                             <outlet property="titleLabel" destination="F1h-8c-rrX" id="Iy2-gv-Vzi"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Detail" rowHeight="23" id="ubN-Kf-Nfd" customClass="DetailCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" rowHeight="23" id="ubN-Kf-Nfd" customClass="TransactionListDetailCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="122" width="375" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubN-Kf-Nfd" id="A8T-NR-cdo">
@@ -113,7 +104,7 @@
                                             <outlet property="descriptionLabel" destination="tuJ-67-3WF" id="XT5-0l-7AN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Subfooter" rowHeight="12" id="Wni-il-Coz" customClass="SubfooterCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subfooter" rowHeight="12" id="Wni-il-Coz" customClass="TransactionListSubfooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="145" width="375" height="12"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wni-il-Coz" id="BPI-uv-oHe">
@@ -121,7 +112,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Footer" id="qVW-Qo-6aY" customClass="TotalCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" id="qVW-Qo-6aY" customClass="TransactionListFooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qVW-Qo-6aY" id="WYQ-V7-WAz">
@@ -129,13 +120,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WJ-9p-T3E">
-                                                    <rect key="frame" x="25" y="12" width="35.5" height="19.5"/>
+                                                    <rect key="frame" x="25" y="12.5" width="35.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oe-Jd-rag">
-                                                    <rect key="frame" x="314.5" y="12" width="35.5" height="20"/>
+                                                    <rect key="frame" x="314.5" y="12.5" width="35.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -149,10 +140,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="totalLabel" destination="9Oe-Jd-rag" id="8fQ-0x-eRK"/>
+                                            <outlet property="totalLabel" destination="9Oe-Jd-rag" id="rJc-GJ-Jgm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Message" rowHeight="70" id="vJj-jB-TdO" customClass="MessageCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="message" rowHeight="70" id="vJj-jB-TdO" customClass="TransactionListMessageCell" customModule="CleanReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="201" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJj-jB-TdO" id="slc-GK-gK4">
@@ -176,7 +167,43 @@
                                             <outlet property="messageLabel" destination="Geo-Kv-9as" id="Lzj-in-5BF"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="grandfooter" id="cWB-D7-yS6" customClass="TransactionListGrandFooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="271" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cWB-D7-yS6" id="2xg-M3-o9b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb3-M3-VxA">
+                                                    <rect key="frame" x="25" y="12" width="85" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.9959705472" green="0.99614065890000003" blue="0.99595981840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqI-gW-QTF">
+                                                    <rect key="frame" x="314.5" y="12" width="35.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.9959705472" green="0.99614065890000003" blue="0.99595981840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mb3-M3-VxA" firstAttribute="centerY" secondItem="2xg-M3-o9b" secondAttribute="centerY" id="GXa-a2-7pL"/>
+                                                <constraint firstItem="yqI-gW-QTF" firstAttribute="centerY" secondItem="2xg-M3-o9b" secondAttribute="centerY" id="Lp4-kp-IGW"/>
+                                                <constraint firstAttribute="trailing" secondItem="yqI-gW-QTF" secondAttribute="trailing" constant="25" id="Qk6-o2-XNs"/>
+                                                <constraint firstItem="Mb3-M3-VxA" firstAttribute="leading" secondItem="2xg-M3-o9b" secondAttribute="leading" constant="25" id="orR-Kj-XN9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.41176470590000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="totalLabel" destination="yqI-gW-QTF" id="XJj-3j-hSP"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LMI-TK-6S6" id="Onc-Vj-zzk"/>
+                                    <outlet property="delegate" destination="LMI-TK-6S6" id="ZB8-g6-ero"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,12 +214,14 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kDh-kr-cA1" secondAttribute="bottom" id="tlf-5w-l0T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="afP-F4-AtQ"/>
+                    <navigationItem key="navigationItem" title="Transaction Details" id="afP-F4-AtQ"/>
                     <connections>
+                        <outlet property="adapter" destination="LMI-TK-6S6" id="bqd-uG-1ih"/>
                         <outlet property="tableView" destination="kDh-kr-cA1" id="T2O-Fn-V30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="LMI-TK-6S6" customClass="TransactionListAdapter" customModule="CleanReportTableDemo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1080" y="-2"/>
         </scene>
