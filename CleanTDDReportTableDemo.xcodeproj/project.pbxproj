@@ -228,9 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				B314AB2A1EB1485200C8CF1F /* Connector */,
+				B314AB391EB1485200C8CF1F /* View */,
 				B314AB2D1EB1485200C8CF1F /* Presenter */,
 				B314AB321EB1485200C8CF1F /* UseCase */,
-				B314AB391EB1485200C8CF1F /* View */,
 			);
 			path = AccountDetailsTransactionList;
 			sourceTree = "<group>";
@@ -259,11 +259,11 @@
 			isa = PBXGroup;
 			children = (
 				B314AB331EB1485200C8CF1F /* TransactionListUseCase.swift */,
-				B314AB341EB1485200C8CF1F /* TransactionListUseCaseBeginOneSourceTransformer.swift */,
-				B314AB351EB1485200C8CF1F /* TransactionListUseCaseBeginTransformerTests.swift */,
-				B314AB361EB1485200C8CF1F /* TransactionListUseCaseBeginTwoSourceTransformer.swift */,
-				B314AB371EB1485200C8CF1F /* TransactionListUseCaseOutput.swift */,
 				B314AB381EB1485200C8CF1F /* TransactionListUseCaseTests.swift */,
+				B314AB371EB1485200C8CF1F /* TransactionListUseCaseOutput.swift */,
+				B314AB341EB1485200C8CF1F /* TransactionListUseCaseBeginOneSourceTransformer.swift */,
+				B314AB361EB1485200C8CF1F /* TransactionListUseCaseBeginTwoSourceTransformer.swift */,
+				B314AB351EB1485200C8CF1F /* TransactionListUseCaseBeginTransformerTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -271,14 +271,14 @@
 		B314AB391EB1485200C8CF1F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B314AB3A1EB1485200C8CF1F /* Cells */,
+				B314AB471EB1485200C8CF1F /* TransactionListViewController.swift */,
+				B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */,
+				B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */,
 				B314AB431EB1485200C8CF1F /* TransactionListAdapter.swift */,
 				B314AB441EB1485200C8CF1F /* TransactionListAdapterTests.swift */,
 				B314AB451EB1485200C8CF1F /* TransactionListCellConfigurator.swift */,
 				B314AB461EB1485200C8CF1F /* TransactionListCellConfiguratorTests.swift */,
-				B314AB471EB1485200C8CF1F /* TransactionListViewController.swift */,
-				B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */,
-				B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */,
+				B314AB3A1EB1485200C8CF1F /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,13 +287,13 @@
 			isa = PBXGroup;
 			children = (
 				B314AB3B1EB1485200C8CF1F /* TransactionListCell.swift */,
+				B314AB3F1EB1485200C8CF1F /* TransactionListHeaderCell.swift */,
+				B314AB421EB1485200C8CF1F /* TransactionListSubheaderCell.swift */,
 				B314AB3C1EB1485200C8CF1F /* TransactionListDetailCell.swift */,
+				B314AB411EB1485200C8CF1F /* TransactionListSubfooterCell.swift */,
 				B314AB3D1EB1485200C8CF1F /* TransactionListFooterCell.swift */,
 				B314AB3E1EB1485200C8CF1F /* TransactionListGrandFooterCell.swift */,
-				B314AB3F1EB1485200C8CF1F /* TransactionListHeaderCell.swift */,
 				B314AB401EB1485200C8CF1F /* TransactionListMessageCell.swift */,
-				B314AB411EB1485200C8CF1F /* TransactionListSubfooterCell.swift */,
-				B314AB421EB1485200C8CF1F /* TransactionListSubheaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -662,6 +662,7 @@
 				B314AB121EB147ED00C8CF1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B314AB131EB147ED00C8CF1F /* Build configuration list for PBXNativeTarget "CleanTDDReportTableDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -670,6 +671,7 @@
 				B314AB151EB147ED00C8CF1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

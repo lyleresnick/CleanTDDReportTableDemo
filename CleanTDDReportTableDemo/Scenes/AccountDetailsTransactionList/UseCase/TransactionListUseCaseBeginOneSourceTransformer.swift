@@ -6,7 +6,6 @@ import Foundation
 class TransactionListUseCaseBeginOneSourceTransformer {
     
     private let allTransactions: [TransactionEntity]?
-
     
     init(allTransactions: [TransactionEntity]?) {
         self.allTransactions = allTransactions

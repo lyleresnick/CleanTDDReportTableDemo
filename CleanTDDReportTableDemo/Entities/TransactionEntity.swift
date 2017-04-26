@@ -19,7 +19,8 @@ struct TransactionEntity {
 
     init( group: String, date: String, description: String, amount: String, debit: String ) {
         
-        guard let group = TransactionGroup(rawValue: group) else {
+        guard let group = TransactionGroup(rawValue: group)
+        else {
             fatalError("Format of Group is incorrect")
         }
         self.group = group
