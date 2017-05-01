@@ -6,11 +6,7 @@ class TransactionListPresenter {
     
     weak var viewController: TransactionListPresenterOutput!
     
-    fileprivate static let outboundDateFormatter: DateFormatter =  {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM' 'dd', 'yyyy"
-        return formatter
-    }()
+    fileprivate static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
     fileprivate var rows = [TransactionListViewModel]()
     fileprivate var odd = false

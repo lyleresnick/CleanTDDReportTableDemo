@@ -51,6 +51,7 @@
 		B314AB7C1EB148B400C8CF1F /* TransactionListCellConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB461EB1485200C8CF1F /* TransactionListCellConfiguratorTests.swift */; };
 		B314AB7D1EB148B400C8CF1F /* TransactionListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */; };
 		B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */; };
+		B348D6E71EB7FD8000BC010E /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewerViewControllerFunctionalTests.swift; sourceTree = "<group>"; };
 		B314AB4A1EB1485200C8CF1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B314AB731EB1485C00C8CF1F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		B314AAF51EB147ED00C8CF1F /* CleanTDDReportTableDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */,
 				B314AB731EB1485C00C8CF1F /* Color.swift */,
 				B314AB161EB1485200C8CF1F /* Assets.xcassets */,
 				B314AB171EB1485200C8CF1F /* Base.lproj */,
@@ -433,6 +436,7 @@
 				B314AB591EB1485200C8CF1F /* TransactionListPresenter.swift in Sources */,
 				B314AB4F1EB1485200C8CF1F /* TransactionGroup.swift in Sources */,
 				B314AB4E1EB1485200C8CF1F /* TransactionEntity.swift in Sources */,
+				B348D6E71EB7FD8000BC010E /* DateFormatter+Format.swift in Sources */,
 				B314AB641EB1485200C8CF1F /* TransactionListDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
