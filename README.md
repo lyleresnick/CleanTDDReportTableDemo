@@ -2,7 +2,7 @@
 
 This iOS app demonstrates an architectual solution to a fairly complex banking report scene. It shows how the VIPER can be used to break up a potentially very Massive View Controller. 
 
-This demonstation app shows how Test Driven Development (TDD) can be applied to write even cleaner code than would be written without TDD. 
+This demonstation app shows how Test Driven Development (TDD) can be applied to write even cleaner code than would be written without TDD. Note that the tests are co-located with the objects that they test.
 
 Besides the addition of tests, this is demo is a slight refactoring of CleanReportTableDemo due to the application of TDD.
 
