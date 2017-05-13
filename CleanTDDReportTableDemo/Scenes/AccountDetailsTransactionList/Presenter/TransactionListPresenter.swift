@@ -105,7 +105,7 @@ extension Double {
 
 private extension TransactionListViewModel {
     
-    private enum Cell: String {
+    private enum CellId: String {
         case header
         case subheader
         case detail
@@ -118,7 +118,7 @@ private extension TransactionListViewModel {
     var cellId: String {
         // so we dont expose enum Cell
         return {
-            () -> Cell in
+            () -> CellId in
             switch self {
             case .header:
                 return .header
