@@ -21,6 +21,8 @@ class TransactionListViewController: UIViewController {
     }
 }
 
+// MARK: - TransactionListPresenterOutput
+
 extension TransactionListViewController: TransactionListPresenterOutput {
     
     func showReport() {

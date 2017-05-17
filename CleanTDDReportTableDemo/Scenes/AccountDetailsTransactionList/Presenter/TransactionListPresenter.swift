@@ -94,7 +94,7 @@ extension TransactionListPresenter: TransactionListUseCaseOutput {
 }
 
 
-//MARK: extension
+//MARK: -
 
 extension Double {
     var asString: String {
@@ -102,21 +102,11 @@ extension Double {
     }
 }
 
+//MARK: -
 
 private extension TransactionListViewModel {
     
-    private enum CellId: String {
-        case header
-        case subheader
-        case detail
-        case subfooter
-        case footer
-        case grandfooter
-        case message
-    }
-    
     var cellId: String {
-        // so we dont expose enum Cell
         return {
             () -> CellId in
             switch self {
@@ -137,7 +127,17 @@ private extension TransactionListViewModel {
             }
         } ().rawValue
     }
-    
+
+    private enum CellId: String {
+        case header
+        case subheader
+        case detail
+        case subfooter
+        case footer
+        case grandfooter
+        case message
+    }
+
     var height: CGFloat {
         get {
             switch self {
