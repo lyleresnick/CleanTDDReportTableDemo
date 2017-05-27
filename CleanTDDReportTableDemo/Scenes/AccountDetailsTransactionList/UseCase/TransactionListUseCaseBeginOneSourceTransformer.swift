@@ -18,7 +18,7 @@ class TransactionListUseCaseBeginOneSourceTransformer {
 
         if let allTransactions = allTransactions {
 
-            var groupStream = ([.Authorized, .Posted] as [TransactionGroup]).makeIterator()
+            var groupStream = ([.authorized, .posted] as [TransactionGroup]).makeIterator()
             var currentGroup = groupStream.next()
 
             var transactionStream = allTransactions.makeIterator()
@@ -63,8 +63,8 @@ class TransactionListUseCaseBeginOneSourceTransformer {
             }
         }
         else {
-            presenter.presentHeader(group: .All)
-            presenter.presentNotFoundMessage( group: .All)
+            presenter.presentHeader(group: .all)
+            presenter.presentNotFoundMessage( group: .all)
         }
         presenter.presentGrandFooter(grandTotal: grandTotal)
         presenter.presentReport()

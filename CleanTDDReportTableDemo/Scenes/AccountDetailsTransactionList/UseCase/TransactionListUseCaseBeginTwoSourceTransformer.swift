@@ -18,8 +18,8 @@ class TransactionListUseCaseBeginTwoSourceTransformer {
         presenter.presentInit()
 
         var grandTotal = 0.0
-        grandTotal += transform(source: authorizedTransactions, group: .Authorized, presenter: presenter)
-        grandTotal += transform(source: postedTransactions, group: .Posted, presenter: presenter)
+        grandTotal += transform(source: authorizedTransactions, group: .authorized, presenter: presenter)
+        grandTotal += transform(source: postedTransactions, group: .posted, presenter: presenter)
         presenter.presentGrandFooter(grandTotal: grandTotal)
 
         presenter.presentReport()
