@@ -165,6 +165,10 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
             rows.append(.noTransactionsMessage)
         }
 
+        func presentNotFoundMessage() {
+            rows.append(.notFoundMessage)
+        }
+
         func presentReport() {
             rows.append(.report)
         }

@@ -63,8 +63,7 @@ class TransactionListUseCaseBeginOneSourceTransformer {
             }
         }
         else {
-            presenter.presentHeader(group: .all)
-            presenter.presentNotFoundMessage( group: .all)
+            presenter.presentNotFoundMessage()
         }
         presenter.presentGrandFooter(grandTotal: grandTotal)
         presenter.presentReport()

@@ -155,10 +155,11 @@
 		B314AAF51EB147ED00C8CF1F /* CleanTDDReportTableDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */,
+				B314AB1A1EB1485200C8CF1F /* Main.storyboard */,
 				B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */,
 				B314AB731EB1485C00C8CF1F /* Color.swift */,
 				B314AB161EB1485200C8CF1F /* Assets.xcassets */,
-				B314AB171EB1485200C8CF1F /* Base.lproj */,
 				B314AB1C1EB1485200C8CF1F /* Entities */,
 				B314AB1F1EB1485200C8CF1F /* EntityGateway */,
 				B314AB251EB1485200C8CF1F /* Managers */,
@@ -177,15 +178,6 @@
 				B314AB0D1EB147ED00C8CF1F /* Info.plist */,
 			);
 			path = CleanTDDReportTableDemoTests;
-			sourceTree = "<group>";
-		};
-		B314AB171EB1485200C8CF1F /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */,
-				B314AB1A1EB1485200C8CF1F /* Main.storyboard */,
-			);
-			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		B314AB1C1EB1485200C8CF1F /* Entities */ = {
@@ -483,6 +475,7 @@
 				B314AB191EB1485200C8CF1F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		B314AB1A1EB1485200C8CF1F /* Main.storyboard */ = {
@@ -491,6 +484,7 @@
 				B314AB1B1EB1485200C8CF1F /* Base */,
 			);
 			name = Main.storyboard;
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

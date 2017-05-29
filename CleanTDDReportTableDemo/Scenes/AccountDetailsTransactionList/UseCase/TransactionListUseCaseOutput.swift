@@ -14,5 +14,7 @@ protocol TransactionListUseCaseOutput: class {
     func presentNotFoundMessage(group: TransactionGroup)
     func presentNoTransactionsMessage(group: TransactionGroup)
     
+    func presentNotFoundMessage()
+
     func presentReport()
 }
