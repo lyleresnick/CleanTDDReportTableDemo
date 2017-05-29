@@ -3,6 +3,7 @@
 import Foundation
 
 enum TransactionGroup: String {
+    
     case authorized = "A"
     case posted = "P"
     
