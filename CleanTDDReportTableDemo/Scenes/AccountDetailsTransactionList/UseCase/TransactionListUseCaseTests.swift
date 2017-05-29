@@ -83,6 +83,7 @@ class TransactionListUseCaseTests: XCTestCase {
         func presentGrandFooter(grandTotal: Double) {}
         func presentNotFoundMessage(group: TransactionGroup) {}
         func presentNoTransactionsMessage(group: TransactionGroup) {}
+        func presentNotFoundMessage() {}
         func presentReport() {}
     }
 }

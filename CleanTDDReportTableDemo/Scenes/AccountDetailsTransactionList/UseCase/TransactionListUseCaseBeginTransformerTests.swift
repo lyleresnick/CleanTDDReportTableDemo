@@ -20,7 +20,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     }
 
 
-    func test_transform_TwoSourceAuthNotFndPostedNotFnd() {
+    func test_transform_TwoSourceAuthNotFoundPostedNotFound() {
         
         let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: nil, postedTransactions: nil)
         sut.transform(presenter: presenter)
@@ -38,7 +38,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     }
     
     
-    func test_transform_OneSourceAuthNotFndPostedNotFnd() {
+    func test_transform_OneSourceNotFound() {
         
         let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: nil)
         sut.transform(presenter: presenter)
@@ -163,6 +163,11 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
         func presentNoTransactionsMessage(group: TransactionGroup) {
             rows.append(.noTransactionsMessage)
+        }
+
+        func presentNotFoundMessage() {
+            rows.append(.header)
+            rows.append(.notFoundMessage)
         }
 
         func presentReport() {
