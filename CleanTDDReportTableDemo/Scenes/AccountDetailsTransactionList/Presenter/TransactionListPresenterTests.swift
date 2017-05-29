@@ -34,7 +34,7 @@ class TransactionListPresenterTests: XCTestCase {
     
     func test_presentHeader_AppendsHeader() {
         sut.presentInit()
-        sut.presentHeader(group: .Authorized)
+        sut.presentHeader(group: .authorized)
         let row = sut.row(at: 0)
         guard case .header(_) = row  else { XCTAssertTrue(false); return }
         XCTAssertTrue(true)
@@ -82,7 +82,7 @@ class TransactionListPresenterTests: XCTestCase {
     
     func test_presentNotFoundMessage_AppendsMessage() {
         sut.presentInit()
-        sut.presentNotFoundMessage(group: .Authorized)
+        sut.presentNotFoundMessage(group: .authorized)
         let row = sut.row(at: 0)
         guard case .message(_) = row  else { XCTAssertTrue(false); return }
         XCTAssertTrue(true)
@@ -90,7 +90,7 @@ class TransactionListPresenterTests: XCTestCase {
     
     func test_presentNoTransactionsMessage_AppendsMessage() {
         sut.presentInit()
-        sut.presentNoTransactionsMessage(group: .Authorized)
+        sut.presentNoTransactionsMessage(group: .authorized)
         let row = sut.row(at: 0)
         guard case .message(_) = row  else { XCTAssertTrue(false); return }
         XCTAssertTrue(true)
