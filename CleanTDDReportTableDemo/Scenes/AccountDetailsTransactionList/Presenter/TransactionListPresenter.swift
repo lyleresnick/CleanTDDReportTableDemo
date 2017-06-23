@@ -34,7 +34,7 @@ class TransactionListPresenter {
     func row(at index: Int) -> TransactionListViewModel { return rows[ index ] }
 }
 
-// MARK: TransactionListPresenterProtocol
+// MARK: TransactionListUseCaseOutput
 
 extension TransactionListPresenter: TransactionListUseCaseOutput {
     
