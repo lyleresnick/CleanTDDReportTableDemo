@@ -18,26 +18,26 @@ class TransactionListUseCaseBeginTwoSourceTransformer {
         output.presentInit()
 
         var grandTotal = 0.0
-        grandTotal += transform(source: authorizedTransactions, group: .authorized, output: output)
-        grandTotal += transform(source: postedTransactions, group: .posted, output: output)
+        grandTotal += transform(transactions: authorizedTransactions, group: .authorized, output: output)
+        grandTotal += transform(transactions: postedTransactions, group: .posted, output: output)
         output.presentGrandFooter(grandTotal: grandTotal)
 
         output.presentReport()
     }
 
-    private func transform(source: [TransactionEntity]?, group: TransactionGroup, output: TransactionListUseCaseOutput) -> Double {
+    private func transform(transactions: [TransactionEntity]?, group: TransactionGroup, output: TransactionListUseCaseOutput) -> Double {
         
         var total = 0.0
 
         output.presentHeader(group: group)
         
-        if let source = source {
+        if let transactions = transactions {
 
-            if source.count == 0 {
+            if transactions.count == 0 {
                 output.presentNoTransactionsMessage(group: group)
             }
             else {
-                var transactionStream = source.makeIterator()
+                var transactionStream = transactions.makeIterator()
                 var transaction = transactionStream.next()
                 
                 while let localTransaction = transaction {
