@@ -4,14 +4,14 @@ import UIKit
 
 class TransactionListPresenter {
     
-    weak var viewController: TransactionListPresenterOutput!
+    weak var output: TransactionListPresenterOutput!
     
     fileprivate static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
     fileprivate var rows = [TransactionListViewModel]()
     fileprivate var odd = false
     
-    fileprivate let useCase: TransactionListUseCase
+    private let useCase: TransactionListUseCase
     
     init(useCase: TransactionListUseCase) {
         self.useCase = useCase
@@ -43,7 +43,7 @@ extension TransactionListPresenter: TransactionListUseCaseOutput {
     }
 
      func presentReport() {
-        viewController.showReport()
+        output.showReport()
     }
 
     func presentHeader(group: TransactionGroup) {

@@ -19,7 +19,7 @@ class TransactionListUseCaseTests: XCTestCase {
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)
-        sut.presenter = stubPresenter
+        sut.output = stubPresenter
     }
 
     func test_beginTwoSource_CallsTransformer() {
@@ -53,7 +53,7 @@ class TransactionListUseCaseTests: XCTestCase {
         var didCall = false
         var presenter: TransactionListUseCaseOutput!
 
-        override func transform( presenter: TransactionListUseCaseOutput ) {
+        override func transform( output presenter: TransactionListUseCaseOutput ) {
 
             didCall = true
             self.presenter = presenter
@@ -65,7 +65,7 @@ class TransactionListUseCaseTests: XCTestCase {
         var didCall = false
         var presenter: TransactionListUseCaseOutput!
         
-        override func transform( presenter: TransactionListUseCaseOutput ) {
+        override func transform( output presenter: TransactionListUseCaseOutput ) {
             
             didCall = true
             self.presenter = presenter

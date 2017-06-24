@@ -15,10 +15,10 @@ class TransactionListPresenterTests: XCTestCase {
 
         stubbedUseCase = StubTransactionListUseCase(entityGateway: entityGateway)
         sut = TransactionListPresenter(useCase: stubbedUseCase)
-        stubbedUseCase.presenter = sut
+        stubbedUseCase.output = sut
 
         stubbedViewController = StubViewController()
-        sut.viewController = stubbedViewController
+        sut.output = stubbedViewController
     }
 
     func test_eventViewReady_CallsUseCase_beginTwoSource() {

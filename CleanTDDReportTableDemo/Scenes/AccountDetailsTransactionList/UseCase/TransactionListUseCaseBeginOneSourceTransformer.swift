@@ -11,10 +11,10 @@ class TransactionListUseCaseBeginOneSourceTransformer {
         self.allTransactions = allTransactions
     }
     
-    func transform(presenter: TransactionListUseCaseOutput) {
+    func transform(output: TransactionListUseCaseOutput) {
         
         var grandTotal = 0.0
-        presenter.presentInit()
+        output.presentInit()
 
         if let allTransactions = allTransactions {
 
@@ -28,11 +28,11 @@ class TransactionListUseCaseBeginOneSourceTransformer {
             
             while let localMinGroup = minGroup {
 
-                presenter.presentHeader(group: localMinGroup)
+                output.presentHeader(group: localMinGroup)
                 
                 if (transaction == nil) || (localMinGroup != transaction!.group) {
                     
-                    presenter.presentNoTransactionsMessage(group: localMinGroup)
+                    output.presentNoTransactionsMessage(group: localMinGroup)
                     currentGroup = groupStream.next()
                     minGroup = determineMinGroup(group: currentGroup, transaction: transaction)
                 }
@@ -42,7 +42,7 @@ class TransactionListUseCaseBeginOneSourceTransformer {
                     while let localTransaction = transaction, localTransaction.group == localMinGroup {
                         
                         let currentDate = localTransaction.date
-                        presenter.presentSubheader(date: currentDate)
+                        output.presentSubheader(date: currentDate)
                         
                         while let localTransaction = transaction,
                               (localTransaction.group == localMinGroup) && (localTransaction.date == currentDate) {
@@ -50,23 +50,23 @@ class TransactionListUseCaseBeginOneSourceTransformer {
                             let amount = localTransaction.amount
                             total += amount
                             grandTotal += amount
-                            presenter.presentDetail(description: localTransaction.description, amount: amount)
+                            output.presentDetail(description: localTransaction.description, amount: amount)
                             
                             transaction = transactionStream.next()
                         }
-                        presenter.presentSubfooter()
+                        output.presentSubfooter()
                     }
-                    presenter.presentFooter(total: total)
+                    output.presentFooter(total: total)
                     currentGroup = groupStream.next()
                     minGroup = determineMinGroup(group: currentGroup, transaction: transaction)
                 }
             }
         }
         else {
-            presenter.presentNotFoundMessage()
+            output.presentNotFoundMessage()
         }
-        presenter.presentGrandFooter(grandTotal: grandTotal)
-        presenter.presentReport()
+        output.presentGrandFooter(grandTotal: grandTotal)
+        output.presentReport()
     }
     
     private func determineMinGroup(group: TransactionGroup?, transaction: TransactionEntity?) -> TransactionGroup? {
