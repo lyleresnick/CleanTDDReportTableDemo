@@ -3,19 +3,17 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListUseCaseTests: XCTestCase {
+class TransactionListUseCaseTwoSourceTests: XCTestCase {
     private var sut: TransactionListUseCase!
     private var stubPresenter: StubTransactionListPresenter!
     private var entityGateway = EntityGatewayFactory.makeEntityGateway()
 
     private var twoSourceTransformer: StubTransactionListUseCaseBeginTwoSourceTransformer!
-    private var oneSourceTransformer: StubTransactionListUseCaseBeginOneSourceTransformer!
 
     override func setUp() {
         super.setUp()
 
         twoSourceTransformer = StubTransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: [], postedTransactions: [])
-        oneSourceTransformer = StubTransactionListUseCaseBeginOneSourceTransformer(allTransactions: [])
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)
@@ -34,18 +32,6 @@ class TransactionListUseCaseTests: XCTestCase {
         XCTAssertTrue(twoSourceTransformer.presenter === stubPresenter)
     }
 
-    func test_beginOneSource_CallsTransformer() {
-        
-        sut.beginOneSource(transformer: oneSourceTransformer)
-        XCTAssertTrue(oneSourceTransformer.didCall)
-    }
-    
-    func test_beginOneSource_CallsTransformerWithPresenter() {
-        
-        sut.beginOneSource(transformer: oneSourceTransformer)
-        XCTAssertTrue(oneSourceTransformer.presenter === stubPresenter)
-    }
-
     // MARK: Stubs
 
     class StubTransactionListUseCaseBeginTwoSourceTransformer: TransactionListUseCaseBeginTwoSourceTransformer {
@@ -60,18 +46,6 @@ class TransactionListUseCaseTests: XCTestCase {
         }
     }
 
-    class StubTransactionListUseCaseBeginOneSourceTransformer: TransactionListUseCaseBeginOneSourceTransformer {
-        
-        var didCall = false
-        var presenter: TransactionListUseCaseOutput!
-        
-        override func transform( presenter: TransactionListUseCaseOutput ) {
-            
-            didCall = true
-            self.presenter = presenter
-        }
-    }
-    
     class StubTransactionListPresenter: TransactionListUseCaseOutput {
 
         func presentInit() {}
