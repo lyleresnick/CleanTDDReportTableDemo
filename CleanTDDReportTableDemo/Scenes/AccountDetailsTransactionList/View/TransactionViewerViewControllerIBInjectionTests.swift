@@ -73,7 +73,7 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
         XCTAssertNotNil(totalLabel)
     }
     
-    func test_IB_InjectsOutletsOfMessagwCell() {
+    func test_IB_InjectsOutletsOfMessageCell() {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "message") as! TransactionListMessageCell
         let messageLabel = cell.value(forKey: "messageLabel")
