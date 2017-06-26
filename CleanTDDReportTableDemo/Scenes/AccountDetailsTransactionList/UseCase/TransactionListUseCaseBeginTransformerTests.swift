@@ -14,7 +14,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_TwoSourceAuthNonePostedNone() {
         
         let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: [], postedTransactions: [])
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
     }
@@ -23,7 +23,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_TwoSourceAuthNotFoundPostedNotFound() {
         
         let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: nil, postedTransactions: nil)
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNotFoundPostedNotFoundOutput)
     }
@@ -32,7 +32,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_OneSourceAuthNonePostedNone() {
         
         let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: [])
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
     }
@@ -41,7 +41,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_OneSourceNotFound() {
         
         let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: nil)
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allNotFoundOutput)
     }
@@ -99,7 +99,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_TwoSource() {
         
         let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: TransactionListUseCaseBeginTransformerTests.authorizedData, postedTransactions: TransactionListUseCaseBeginTransformerTests.postedData)
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)
     }
@@ -107,7 +107,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     func test_transform_OneSource() {
         
         let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: TransactionListUseCaseBeginTransformerTests.authorizedData + TransactionListUseCaseBeginTransformerTests.postedData)
-        sut.transform(presenter: presenter)
+        sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)
     }

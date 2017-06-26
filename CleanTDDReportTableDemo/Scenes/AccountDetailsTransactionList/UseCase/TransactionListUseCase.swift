@@ -5,7 +5,7 @@ import Foundation
 
 class TransactionListUseCase {
 
-    weak var presenter: TransactionListUseCaseOutput!
+    weak var output: TransactionListUseCaseOutput!
     private let entityGateway: EntityGateway
     
     init(entityGateway: EntityGateway) {
@@ -23,7 +23,7 @@ class TransactionListUseCase {
                 authorizedTransactions: authorizedTransactions,
                 postedTransactions: postedTransactions)
         }
-        transformer!.transform(presenter: presenter)
+        transformer!.transform(output: output)
     }
     
     func beginOneSource(transformer: TransactionListUseCaseBeginOneSourceTransformer? = nil) {
@@ -35,7 +35,7 @@ class TransactionListUseCase {
             transformer = TransactionListUseCaseBeginOneSourceTransformer(
                 allTransactions: allTransactions)
         }
-        transformer!.transform(presenter: presenter)
+        transformer!.transform(output: output)
     }
 }
 

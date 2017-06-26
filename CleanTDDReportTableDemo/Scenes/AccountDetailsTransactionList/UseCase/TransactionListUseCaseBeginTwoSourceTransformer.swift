@@ -13,52 +13,52 @@ class TransactionListUseCaseBeginTwoSourceTransformer {
         self.postedTransactions = postedTransactions
     }
     
-    func transform(presenter: TransactionListUseCaseOutput) {
+    func transform(output: TransactionListUseCaseOutput) {
         
-        presenter.presentInit()
+        output.presentInit()
 
         var grandTotal = 0.0
-        grandTotal += transform(source: authorizedTransactions, group: .authorized, presenter: presenter)
-        grandTotal += transform(source: postedTransactions, group: .posted, presenter: presenter)
-        presenter.presentGrandFooter(grandTotal: grandTotal)
+        grandTotal += transform(transactions: authorizedTransactions, group: .authorized, output: output)
+        grandTotal += transform(transactions: postedTransactions, group: .posted, output: output)
+        output.presentGrandFooter(grandTotal: grandTotal)
 
-        presenter.presentReport()
+        output.presentReport()
     }
 
-    private func transform(source: [TransactionEntity]?, group: TransactionGroup, presenter: TransactionListUseCaseOutput) -> Double {
+    private func transform(transactions: [TransactionEntity]?, group: TransactionGroup, output: TransactionListUseCaseOutput) -> Double {
         
         var total = 0.0
 
-        presenter.presentHeader(group: group)
+        output.presentHeader(group: group)
         
-        if let source = source {
+        if let transactions = transactions {
 
-            if source.count == 0 {
-                presenter.presentNoTransactionsMessage(group: group)
+            if transactions.count == 0 {
+                output.presentNoTransactionsMessage(group: group)
             }
             else {
-                var transactionStream = source.makeIterator()
+                var transactionStream = transactions.makeIterator()
                 var transaction = transactionStream.next()
                 
                 while let localTransaction = transaction {
                     
                     let currentDate = localTransaction.date
-                    presenter.presentSubheader(date: currentDate)
+                    output.presentSubheader(date: currentDate)
                     
                     while let localTransaction = transaction,
                           localTransaction.date == currentDate {
                         
                         total += localTransaction.amount
-                        presenter.presentDetail(description: localTransaction.description, amount: localTransaction.amount)
+                        output.presentDetail(description: localTransaction.description, amount: localTransaction.amount)
                         transaction = transactionStream.next()
                     }
-                    presenter.presentSubfooter()
+                    output.presentSubfooter()
                 }
-                presenter.presentFooter(total: total)
+                output.presentFooter(total: total)
             }
         }
         else {
-            presenter.presentNotFoundMessage(group: group)
+            output.presentNotFoundMessage(group: group)
         }
 
         return total

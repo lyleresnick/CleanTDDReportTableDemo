@@ -31,12 +31,12 @@ class TransactionListConnectorTests: XCTestCase {
         XCTAssertTrue(adapter.presenter === presenter)
     }
     
-    func test_Configure_SetsUseCasesPresenter() {
-        XCTAssertTrue(useCase.presenter === presenter)
+    func test_Configure_SetsUseCasesOutput() {
+        XCTAssertTrue(useCase.output === presenter)
     }
     
-    func test_Configure_SetsPresentersViewController() {
-        XCTAssertTrue(presenter.viewController === controller)
+    func test_Configure_SetsPresentersOutput() {
+        XCTAssertTrue(presenter.output === controller)
     }
     
 }

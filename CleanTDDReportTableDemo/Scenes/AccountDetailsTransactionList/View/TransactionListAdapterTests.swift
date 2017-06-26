@@ -24,7 +24,7 @@ class TransactionListAdapterTests: XCTestCase {
         
         let transactionListUseCase = TransactionListUseCase(entityGateway: entityGateway)
         let transactionListPresenter = StubTransactionListPresenter(useCase: transactionListUseCase)
-        transactionListUseCase.presenter = transactionListPresenter
+        transactionListUseCase.output = transactionListPresenter
         return transactionListPresenter
     }
     

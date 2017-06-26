@@ -29,7 +29,7 @@ class TransactionListConnector {
     func configure() {
         viewController.presenter = presenter
         adapter.presenter = presenter
-        presenter.viewController = viewController
-        useCase.presenter = presenter
+        presenter.output = viewController
+        useCase.output = presenter
     }
 }

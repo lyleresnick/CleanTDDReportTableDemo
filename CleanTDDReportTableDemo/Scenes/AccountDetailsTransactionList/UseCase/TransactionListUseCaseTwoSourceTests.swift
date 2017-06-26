@@ -17,7 +17,7 @@ class TransactionListUseCaseTwoSourceTests: XCTestCase {
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)
-        sut.presenter = stubPresenter
+        sut.output = stubPresenter
     }
 
     func test_beginTwoSource_CallsTransformer() {
@@ -29,7 +29,7 @@ class TransactionListUseCaseTwoSourceTests: XCTestCase {
     func test_beginTwoSource_CallsTransformerWithPresenter() {
 
         sut.begin(transformer: twoSourceTransformer)
-        XCTAssertTrue(twoSourceTransformer.presenter === stubPresenter)
+        XCTAssertTrue(twoSourceTransformer.output === stubPresenter)
     }
 
     // MARK: Stubs
@@ -37,12 +37,12 @@ class TransactionListUseCaseTwoSourceTests: XCTestCase {
     class StubTransactionListUseCaseBeginTwoSourceTransformer: TransactionListUseCaseBeginTwoSourceTransformer {
 
         var didCall = false
-        var presenter: TransactionListUseCaseOutput!
+        var output: TransactionListUseCaseOutput!
 
-        override func transform( presenter: TransactionListUseCaseOutput ) {
+        override func transform( output: TransactionListUseCaseOutput ) {
 
             didCall = true
-            self.presenter = presenter
+            self.output = output
         }
     }
 
