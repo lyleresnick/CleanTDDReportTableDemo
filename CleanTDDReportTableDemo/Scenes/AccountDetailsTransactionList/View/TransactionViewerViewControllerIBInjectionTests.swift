@@ -3,7 +3,7 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListViewControllerFunctionalTests: XCTestCase {
+class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
 
     private var sut: TransactionListViewController!
     private var tableView: UITableView!

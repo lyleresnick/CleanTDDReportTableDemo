@@ -49,7 +49,7 @@
 		B314AB7B1EB148AE00C8CF1F /* TransactionListAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB441EB1485200C8CF1F /* TransactionListAdapterTests.swift */; };
 		B314AB7C1EB148B400C8CF1F /* TransactionListCellConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB461EB1485200C8CF1F /* TransactionListCellConfiguratorTests.swift */; };
 		B314AB7D1EB148B400C8CF1F /* TransactionListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */; };
-		B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */; };
+		B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift */; };
 		B32931301F01353F002DCB0D /* TransactionListUseCaseOneSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329312C1F01351D002DCB0D /* TransactionListUseCaseOneSourceTests.swift */; };
 		B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329312D1F01351D002DCB0D /* TransactionListUseCaseTwoSourceTests.swift */; };
 		B348D6E71EB7FD8000BC010E /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */; };
@@ -110,7 +110,7 @@
 		B314AB461EB1485200C8CF1F /* TransactionListCellConfiguratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListCellConfiguratorTests.swift; sourceTree = "<group>"; };
 		B314AB471EB1485200C8CF1F /* TransactionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
 		B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewControllerTests.swift; sourceTree = "<group>"; };
-		B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewerViewControllerFunctionalTests.swift; sourceTree = "<group>"; };
+		B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewerViewControllerIBInjectionTests.swift; sourceTree = "<group>"; };
 		B314AB4A1EB1485200C8CF1F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B314AB731EB1485C00C8CF1F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B329312C1F01351D002DCB0D /* TransactionListUseCaseOneSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListUseCaseOneSourceTests.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 			children = (
 				B314AB471EB1485200C8CF1F /* TransactionListViewController.swift */,
 				B314AB481EB1485200C8CF1F /* TransactionListViewControllerTests.swift */,
-				B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift */,
+				B314AB491EB1485200C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift */,
 				B314AB431EB1485200C8CF1F /* TransactionListAdapter.swift */,
 				B314AB441EB1485200C8CF1F /* TransactionListAdapterTests.swift */,
 				B314AB451EB1485200C8CF1F /* TransactionListCellConfigurator.swift */,
@@ -441,7 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B314AB7B1EB148AE00C8CF1F /* TransactionListAdapterTests.swift in Sources */,
-				B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerFunctionalTests.swift in Sources */,
+				B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift in Sources */,
 				B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */,
 				B32931301F01353F002DCB0D /* TransactionListUseCaseOneSourceTests.swift in Sources */,
 				B314AB791EB148A600C8CF1F /* TransactionListUseCaseBeginTransformerTests.swift in Sources */,
