@@ -5,10 +5,10 @@ import UIKit
 
 class TransactionListConnector {
     
-    private let viewController: TransactionListViewController
-    private let adapter: TransactionListAdapter
-    private let presenter: TransactionListPresenter
-    private var useCase: TransactionListUseCase
+    let viewController: TransactionListViewController
+    let adapter: TransactionListAdapter
+    let presenter: TransactionListPresenter
+    let useCase: TransactionListUseCase
     
     init(viewController: TransactionListViewController, adapter: TransactionListAdapter, useCase: TransactionListUseCase, presenter: TransactionListPresenter) {
         

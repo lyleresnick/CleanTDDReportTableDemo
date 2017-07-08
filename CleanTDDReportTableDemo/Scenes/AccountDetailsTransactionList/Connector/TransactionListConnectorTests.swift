@@ -23,6 +23,22 @@ class TransactionListConnectorTests: XCTestCase {
         sut.configure()
     }
     
+    func test_Init_SetsViewController() {
+        XCTAssertTrue(sut.viewController === controller)
+    }
+    
+    func test_Init_SetsAdapter() {
+        XCTAssertTrue(sut.adapter === adapter)
+    }
+    
+    func test_Init_SetsPresenter() {
+        XCTAssertTrue(sut.presenter === presenter)
+    }
+    
+    func test_Init_SetsUseCase() {
+        XCTAssertTrue(sut.useCase === useCase)
+    }
+    
     func test_Configure_SetsControllersPresenter() {
         XCTAssertTrue(controller.presenter === presenter)
     }
