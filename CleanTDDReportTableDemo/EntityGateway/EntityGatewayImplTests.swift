@@ -3,14 +3,13 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-
 class EntityGatewayImplTests: XCTestCase {
     
     var sut: EntityGateway!
     var sut2: EntityGateway!
     var sut3: EntityGateway!
-    var oneSourceManager = OneSourceManager()
-    var twoSourceManager = TwoSourceManager()
+    var oneSourceManager = OneSourceManagerImpl()
+    var twoSourceManager = TwoSourceManagerImpl()
     
     override func setUp() {
         super.setUp()

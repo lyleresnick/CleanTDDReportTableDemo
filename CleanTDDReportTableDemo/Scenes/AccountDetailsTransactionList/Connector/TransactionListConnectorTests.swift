@@ -16,7 +16,7 @@ class TransactionListConnectorTests: XCTestCase {
         
         controller = TransactionListViewController()
         adapter = TransactionListAdapter()
-        useCase = TransactionListUseCase(entityGateway: EntityGatewayFactory.makeEntityGateway())
+        useCase = TransactionListUseCase(entityGateway: FakeNilEntityGateway())
         presenter = TransactionListPresenter(useCase: useCase)
         
         sut = TransactionListConnector(viewController: controller, adapter: adapter, useCase: useCase, presenter: presenter)
@@ -38,5 +38,4 @@ class TransactionListConnectorTests: XCTestCase {
     func test_Configure_SetsPresentersOutput() {
         XCTAssertTrue(presenter.output === controller)
     }
-    
 }

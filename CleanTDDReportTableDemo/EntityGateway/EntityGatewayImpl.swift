@@ -15,13 +15,13 @@ class EntityGatewayImpl: EntityGateway {
             self.oneSourceManager = oneSourceManager
         }
         else {
-            self.oneSourceManager = OneSourceManager()
+            self.oneSourceManager = OneSourceManagerImpl()
         }
         if let twoSourceManager = twoSourceManager {
             self.twoSourceManager = twoSourceManager
         }
         else {
-            self.twoSourceManager = TwoSourceManager()
+            self.twoSourceManager = TwoSourceManagerImpl()
         }
     }
 

@@ -9,9 +9,6 @@ class TransactionListViewControllerTests: XCTestCase {
     private var stubPresenter: StubTransactionListPresenter!
     private var fakeIBLoader = FakeIBLoader() // held strong due to weak injection target
 
-    fileprivate var settingsSelectedCalled = false
-    fileprivate var notificationsSelectedCalled = false
-
     override func setUp() {
         super.setUp()
 
@@ -130,12 +127,5 @@ class TransactionListViewControllerTests: XCTestCase {
         }
     }
 
-    class StubTransactionListViewController: TransactionListViewController {
-
-        override func performSegue(withIdentifier identifier: String, sender: Any?) {
-            // prevent viewController from calling any segues embedded in sut code
-        }
-    }
-    
 }
 

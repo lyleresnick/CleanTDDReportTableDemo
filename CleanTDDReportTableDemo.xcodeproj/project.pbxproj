@@ -12,14 +12,13 @@
 		B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AAFF1EB147ED00C8CF1F /* LaunchScreen.storyboard */; };
 		B314AB4B1EB1485200C8CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B314AB161EB1485200C8CF1F /* Assets.xcassets */; };
 		B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */; };
-		B314AB4D1EB1485200C8CF1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AB1A1EB1485200C8CF1F /* Main.storyboard */; };
 		B314AB4E1EB1485200C8CF1F /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1D1EB1485200C8CF1F /* TransactionEntity.swift */; };
 		B314AB4F1EB1485200C8CF1F /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1E1EB1485200C8CF1F /* TransactionGroup.swift */; };
 		B314AB501EB1485200C8CF1F /* EntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB201EB1485200C8CF1F /* EntityGateway.swift */; };
 		B314AB511EB1485200C8CF1F /* EntityGatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB211EB1485200C8CF1F /* EntityGatewayFactory.swift */; };
 		B314AB531EB1485200C8CF1F /* EntityGatewayImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB231EB1485200C8CF1F /* EntityGatewayImpl.swift */; };
-		B314AB551EB1485200C8CF1F /* OneSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB261EB1485200C8CF1F /* OneSourceManager.swift */; };
-		B314AB561EB1485200C8CF1F /* TwoSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB271EB1485200C8CF1F /* TwoSourceManager.swift */; };
+		B314AB551EB1485200C8CF1F /* OneSourceManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB261EB1485200C8CF1F /* OneSourceManagerImpl.swift */; };
+		B314AB561EB1485200C8CF1F /* TwoSourceManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB271EB1485200C8CF1F /* TwoSourceManagerImpl.swift */; };
 		B314AB571EB1485200C8CF1F /* TransactionListConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2B1EB1485200C8CF1F /* TransactionListConnector.swift */; };
 		B314AB591EB1485200C8CF1F /* TransactionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */; };
 		B314AB5A1EB1485200C8CF1F /* TransactionListPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */; };
@@ -53,6 +52,9 @@
 		B32931301F01353F002DCB0D /* TransactionListUseCaseOneSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329312C1F01351D002DCB0D /* TransactionListUseCaseOneSourceTests.swift */; };
 		B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329312D1F01351D002DCB0D /* TransactionListUseCaseTwoSourceTests.swift */; };
 		B348D6E71EB7FD8000BC010E /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */; };
+		B366CD7C1F1141A1001E1FC1 /* OneSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */; };
+		B366CD7E1F1141BF001E1FC1 /* TwoSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */; };
+		B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,6 @@
 		B314AB0D1EB147ED00C8CF1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B314AB161EB1485200C8CF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B314AB191EB1485200C8CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B314AB1B1EB1485200C8CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		B314AB1D1EB1485200C8CF1F /* TransactionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionEntity.swift; sourceTree = "<group>"; };
 		B314AB1E1EB1485200C8CF1F /* TransactionGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionGroup.swift; sourceTree = "<group>"; };
 		B314AB201EB1485200C8CF1F /* EntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGateway.swift; sourceTree = "<group>"; };
@@ -83,8 +84,8 @@
 		B314AB221EB1485200C8CF1F /* EntityGatewayFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayFactoryTests.swift; sourceTree = "<group>"; };
 		B314AB231EB1485200C8CF1F /* EntityGatewayImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayImpl.swift; sourceTree = "<group>"; };
 		B314AB241EB1485200C8CF1F /* EntityGatewayImplTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayImplTests.swift; sourceTree = "<group>"; };
-		B314AB261EB1485200C8CF1F /* OneSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneSourceManager.swift; sourceTree = "<group>"; };
-		B314AB271EB1485200C8CF1F /* TwoSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSourceManager.swift; sourceTree = "<group>"; };
+		B314AB261EB1485200C8CF1F /* OneSourceManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneSourceManagerImpl.swift; sourceTree = "<group>"; };
+		B314AB271EB1485200C8CF1F /* TwoSourceManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSourceManagerImpl.swift; sourceTree = "<group>"; };
 		B314AB2B1EB1485200C8CF1F /* TransactionListConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListConnector.swift; sourceTree = "<group>"; };
 		B314AB2C1EB1485200C8CF1F /* TransactionListConnectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListConnectorTests.swift; sourceTree = "<group>"; };
 		B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListPresenter.swift; sourceTree = "<group>"; };
@@ -116,6 +117,9 @@
 		B329312C1F01351D002DCB0D /* TransactionListUseCaseOneSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListUseCaseOneSourceTests.swift; sourceTree = "<group>"; };
 		B329312D1F01351D002DCB0D /* TransactionListUseCaseTwoSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListUseCaseTwoSourceTests.swift; sourceTree = "<group>"; };
 		B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
+		B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneSourceManager.swift; sourceTree = "<group>"; };
+		B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSourceManager.swift; sourceTree = "<group>"; };
+		B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeEntityGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */,
-				B314AB1A1EB1485200C8CF1F /* Main.storyboard */,
 				B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */,
 				B314AB731EB1485C00C8CF1F /* Color.swift */,
 				B314AB161EB1485200C8CF1F /* Assets.xcassets */,
@@ -199,6 +202,7 @@
 				B314AB221EB1485200C8CF1F /* EntityGatewayFactoryTests.swift */,
 				B314AB231EB1485200C8CF1F /* EntityGatewayImpl.swift */,
 				B314AB241EB1485200C8CF1F /* EntityGatewayImplTests.swift */,
+				B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */,
 			);
 			path = EntityGateway;
 			sourceTree = "<group>";
@@ -206,8 +210,10 @@
 		B314AB251EB1485200C8CF1F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				B314AB261EB1485200C8CF1F /* OneSourceManager.swift */,
-				B314AB271EB1485200C8CF1F /* TwoSourceManager.swift */,
+				B314AB261EB1485200C8CF1F /* OneSourceManagerImpl.swift */,
+				B314AB271EB1485200C8CF1F /* TwoSourceManagerImpl.swift */,
+				B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */,
+				B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -385,7 +391,6 @@
 				B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */,
 				B314AAFE1EB147ED00C8CF1F /* Assets.xcassets in Resources */,
 				B314AB4B1EB1485200C8CF1F /* Assets.xcassets in Resources */,
-				B314AB4D1EB1485200C8CF1F /* Main.storyboard in Resources */,
 				B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,12 +410,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B314AAF71EB147ED00C8CF1F /* AppDelegate.swift in Sources */,
+				B366CD7E1F1141BF001E1FC1 /* TwoSourceManager.swift in Sources */,
 				B314AB631EB1485200C8CF1F /* TransactionListCell.swift in Sources */,
 				B314AB571EB1485200C8CF1F /* TransactionListConnector.swift in Sources */,
 				B314AB6D1EB1485200C8CF1F /* TransactionListCellConfigurator.swift in Sources */,
 				B314AB601EB1485200C8CF1F /* TransactionListUseCaseBeginTwoSourceTransformer.swift in Sources */,
 				B314AB671EB1485200C8CF1F /* TransactionListHeaderCell.swift in Sources */,
-				B314AB551EB1485200C8CF1F /* OneSourceManager.swift in Sources */,
+				B314AB551EB1485200C8CF1F /* OneSourceManagerImpl.swift in Sources */,
 				B314AB5E1EB1485200C8CF1F /* TransactionListUseCaseBeginOneSourceTransformer.swift in Sources */,
 				B314AB6A1EB1485200C8CF1F /* TransactionListSubheaderCell.swift in Sources */,
 				B314AB651EB1485200C8CF1F /* TransactionListFooterCell.swift in Sources */,
@@ -418,11 +424,12 @@
 				B314AB6B1EB1485200C8CF1F /* TransactionListAdapter.swift in Sources */,
 				B314AB531EB1485200C8CF1F /* EntityGatewayImpl.swift in Sources */,
 				B314AB691EB1485200C8CF1F /* TransactionListSubfooterCell.swift in Sources */,
-				B314AB561EB1485200C8CF1F /* TwoSourceManager.swift in Sources */,
+				B314AB561EB1485200C8CF1F /* TwoSourceManagerImpl.swift in Sources */,
 				B314AB661EB1485200C8CF1F /* TransactionListGrandFooterCell.swift in Sources */,
 				B314AB501EB1485200C8CF1F /* EntityGateway.swift in Sources */,
 				B314AB5C1EB1485200C8CF1F /* TransactionListViewModel.swift in Sources */,
 				B314AB6F1EB1485200C8CF1F /* TransactionListViewController.swift in Sources */,
+				B366CD7C1F1141A1001E1FC1 /* OneSourceManager.swift in Sources */,
 				B314AB681EB1485200C8CF1F /* TransactionListMessageCell.swift in Sources */,
 				B314AB511EB1485200C8CF1F /* EntityGatewayFactory.swift in Sources */,
 				B314AB611EB1485200C8CF1F /* TransactionListUseCaseOutput.swift in Sources */,
@@ -440,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */,
 				B314AB7B1EB148AE00C8CF1F /* TransactionListAdapterTests.swift in Sources */,
 				B314AB7E1EB148B400C8CF1F /* TransactionViewerViewControllerIBInjectionTests.swift in Sources */,
 				B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */,
@@ -479,15 +487,6 @@
 				B314AB191EB1485200C8CF1F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		B314AB1A1EB1485200C8CF1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B314AB1B1EB1485200C8CF1F /* Base */,
-			);
-			name = Main.storyboard;
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};

@@ -7,6 +7,4 @@ class EntityGatewayFactory {
     static func makeEntityGateway(oneSourceManager: OneSourceManager? = nil, twoSourceManager: TwoSourceManager? = nil) -> EntityGateway {
         return EntityGatewayImpl(oneSourceManager: oneSourceManager, twoSourceManager: twoSourceManager)
     }
-    
-    
 }

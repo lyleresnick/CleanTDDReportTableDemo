@@ -1,14 +1,8 @@
 //  Copyright © 2017 Lyle Resnick. All rights reserved.
 
-class TwoSourceManager {
+protocol TwoSourceManager: class {
     
-    func fetchAuthorizedTransactions() -> [TransactionEntity]? {
-        return TransactionEntity.authorizedData
-    }
-    
-    func fetchPostedTransactions() -> [TransactionEntity]? {
-        return TransactionEntity.postedData
-    }
-    
-    
+    func fetchAuthorizedTransactions() -> [TransactionEntity]?
+    func fetchPostedTransactions() -> [TransactionEntity]?
 }
+
