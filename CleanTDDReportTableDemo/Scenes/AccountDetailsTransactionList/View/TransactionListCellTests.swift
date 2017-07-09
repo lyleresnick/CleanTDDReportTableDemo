@@ -3,7 +3,7 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListViewControllerCellTests: XCTestCase {
+class TransactionListCellTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -32,7 +32,8 @@ class TransactionListViewControllerCellTests: XCTestCase {
         
         let titleLabel = cell.value(forKey: "titleLabel") as! UILabel
         XCTAssertTrue(titleLabel.text == testString)
-        XCTAssertTrue(cell.backgroundColor == UIColor(rgb: TransactionListSubheaderCell.oddBackgroundRGB))
+        XCTAssertTrue(cell.backgroundColor ==
+            UIColor(rgb: TransactionListSubheaderCell.oddBackgroundRGB))
     }
     
     func test_DetailCell_show_SetsCorrectly() {
@@ -49,7 +50,8 @@ class TransactionListViewControllerCellTests: XCTestCase {
         let amountLabel = cell.value(forKey: "amountLabel") as! UILabel
         XCTAssertTrue(amountLabel.text == testString2)
         
-        XCTAssertTrue(cell.backgroundColor == UIColor(rgb: TransactionListDetailCell.oddBackgroundRGB))
+        XCTAssertTrue(cell.backgroundColor ==
+            UIColor(rgb: TransactionListDetailCell.oddBackgroundRGB))
     }
     
     func test_FooterCell_show_SetsCorrectly() {
@@ -61,7 +63,8 @@ class TransactionListViewControllerCellTests: XCTestCase {
         
         let totalLabel = cell.value(forKey: "totalLabel") as! UILabel
         XCTAssertTrue(totalLabel.text == testString)
-        XCTAssertTrue(cell.backgroundColor == UIColor(rgb: TransactionListFooterCell.evenBackgroundRGB))
+        XCTAssertTrue(cell.backgroundColor ==
+            UIColor(rgb: TransactionListFooterCell.evenBackgroundRGB))
     }
     
     func test_GrandFooterCell_show_SetsCorrectly() {
@@ -85,6 +88,5 @@ class TransactionListViewControllerCellTests: XCTestCase {
         let totalLabel = cell.value(forKey: "messageLabel") as! UILabel
         XCTAssertTrue(totalLabel.text == testString)
     }
-    
 }
 
