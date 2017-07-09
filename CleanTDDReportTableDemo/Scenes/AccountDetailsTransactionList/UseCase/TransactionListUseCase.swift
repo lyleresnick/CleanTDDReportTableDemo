@@ -6,7 +6,7 @@ import Foundation
 class TransactionListUseCase {
 
     weak var output: TransactionListUseCaseOutput!
-    private let entityGateway: EntityGateway
+    let entityGateway: EntityGateway
     
     init(entityGateway: EntityGateway) {
         self.entityGateway = entityGateway

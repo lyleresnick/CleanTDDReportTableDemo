@@ -10,6 +10,8 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
+        EntityGatewayFactory.gateway = FakeNilEntityGateway()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: TransactionListViewController.self) ) as! TransactionListViewController

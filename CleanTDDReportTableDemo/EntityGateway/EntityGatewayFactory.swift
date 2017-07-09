@@ -4,7 +4,12 @@ import Foundation
 
 class EntityGatewayFactory {
     
-    static func makeEntityGateway(oneSourceManager: OneSourceManager? = nil, twoSourceManager: TwoSourceManager? = nil) -> EntityGateway {
-        return EntityGatewayImpl(oneSourceManager: oneSourceManager, twoSourceManager: twoSourceManager)
+    static var gateway: EntityGateway? = nil
+    
+    static func makeEntityGateway() -> EntityGateway {
+        if gateway == nil {
+            gateway = EntityGatewayImpl()
+        }
+        return gateway!
     }
 }

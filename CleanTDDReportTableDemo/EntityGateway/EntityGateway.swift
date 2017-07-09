@@ -3,7 +3,7 @@
 
 import Foundation
 
-protocol EntityGateway {
+protocol EntityGateway: class {
     
     var oneSourceManager: OneSourceManager { get }
     var twoSourceManager: TwoSourceManager { get }
