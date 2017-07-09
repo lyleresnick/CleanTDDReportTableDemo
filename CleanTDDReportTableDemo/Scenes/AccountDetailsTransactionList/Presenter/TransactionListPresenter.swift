@@ -6,7 +6,7 @@ class TransactionListPresenter {
     
     weak var output: TransactionListPresenterOutput!
     
-    fileprivate static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
+    static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
     fileprivate var rows = [TransactionListViewModel]()
     fileprivate var odd = false
@@ -39,6 +39,7 @@ class TransactionListPresenter {
 extension TransactionListPresenter: TransactionListUseCaseOutput {
     
     func presentInit() {
+        odd = false
         rows.removeAll()
     }
 
