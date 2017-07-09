@@ -17,6 +17,7 @@ class TransactionListViewModelTests: XCTestCase {
     
     func test_presentInit_ClearsAllRows() {
         XCTAssertTrue(sut.rowCount == 0)
+        XCTAssertFalse(sut.odd)
     }
     
     func test_presentHeader_AppendsHeader() {

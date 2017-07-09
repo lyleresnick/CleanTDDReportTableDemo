@@ -9,7 +9,7 @@ class TransactionListPresenter {
     static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
     fileprivate var rows = [TransactionListViewModel]()
-    fileprivate var odd = false
+    fileprivate(set) var odd = false
     
     private let useCase: TransactionListUseCase
     
@@ -48,7 +48,6 @@ extension TransactionListPresenter: TransactionListUseCaseOutput {
     }
 
     func presentHeader(group: TransactionGroup) {
-        
         rows.append(.header(title: group.toString() + " Transactions"));
     }
     
