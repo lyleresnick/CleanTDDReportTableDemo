@@ -53,6 +53,7 @@
 		B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329312D1F01351D002DCB0D /* TransactionListUseCaseTwoSourceTests.swift */; };
 		B348D6E71EB7FD8000BC010E /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */; };
 		B34B04261F1292E300D96D90 /* TransactionListConvenienceConnectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B04241F12929000D96D90 /* TransactionListConvenienceConnectorTests.swift */; };
+		B34B04291F12A0DF00D96D90 /* TransactionListViewControllerCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B04271F12A0C600D96D90 /* TransactionListViewControllerCellTests.swift */; };
 		B366CD7C1F1141A1001E1FC1 /* OneSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */; };
 		B366CD7E1F1141BF001E1FC1 /* TwoSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */; };
 		B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */; };
@@ -119,6 +120,7 @@
 		B329312D1F01351D002DCB0D /* TransactionListUseCaseTwoSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListUseCaseTwoSourceTests.swift; sourceTree = "<group>"; };
 		B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 		B34B04241F12929000D96D90 /* TransactionListConvenienceConnectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListConvenienceConnectorTests.swift; sourceTree = "<group>"; };
+		B34B04271F12A0C600D96D90 /* TransactionListViewControllerCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewControllerCellTests.swift; sourceTree = "<group>"; };
 		B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneSourceManager.swift; sourceTree = "<group>"; };
 		B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSourceManager.swift; sourceTree = "<group>"; };
 		B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeEntityGateway.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				B314AB451EB1485200C8CF1F /* TransactionListCellConfigurator.swift */,
 				B314AB461EB1485200C8CF1F /* TransactionListCellConfiguratorTests.swift */,
 				B314AB3A1EB1485200C8CF1F /* Cells */,
+				B34B04271F12A0C600D96D90 /* TransactionListViewControllerCellTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */,
 				B314AB7B1EB148AE00C8CF1F /* TransactionListAdapterTests.swift in Sources */,
 				B314AB7E1EB148B400C8CF1F /* TransactionListViewControllerIBInjectionTests.swift in Sources */,
+				B34B04291F12A0DF00D96D90 /* TransactionListViewControllerCellTests.swift in Sources */,
 				B32931311F01353F002DCB0D /* TransactionListUseCaseTwoSourceTests.swift in Sources */,
 				B32931301F01353F002DCB0D /* TransactionListUseCaseOneSourceTests.swift in Sources */,
 				B314AB791EB148A600C8CF1F /* TransactionListUseCaseBeginTransformerTests.swift in Sources */,
