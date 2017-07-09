@@ -6,7 +6,7 @@ import XCTest
 class TransactionListUseCaseTwoSourceTests: XCTestCase {
     private var sut: TransactionListUseCase!
     private var stubPresenter: StubTransactionListPresenter!
-    private var entityGateway = EntityGatewayFactory.makeEntityGateway()
+    private var entityGateway = FakeNilEntityGateway()
 
     private var twoSourceTransformer: StubTransactionListUseCaseBeginTwoSourceTransformer!
 

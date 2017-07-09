@@ -12,7 +12,7 @@ class TransactionListViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let useCase = TransactionListUseCase( entityGateway: EntityGatewayFactory.makeEntityGateway())
+        let useCase = TransactionListUseCase( entityGateway: FakeNilEntityGateway())
         stubPresenter = StubTransactionListPresenter(useCase: useCase )
         sut = fakeIBLoader.load( sut: TransactionListViewController(), presenter: stubPresenter, useCase: useCase )
 

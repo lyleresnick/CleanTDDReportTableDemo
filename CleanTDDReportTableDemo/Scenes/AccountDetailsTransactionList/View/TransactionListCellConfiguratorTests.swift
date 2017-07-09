@@ -9,7 +9,7 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
     var sut: StubTransactionListCellConfigurator!
     let tableView = UITableView()
     let indexPath = IndexPath(row: 999, section: 999)
-    let presenter = TransactionListPresenter(useCase: TransactionListUseCase(entityGateway: EntityGatewayFactory.makeEntityGateway()))
+    let presenter = TransactionListPresenter(useCase: TransactionListUseCase(entityGateway: FakeNilEntityGateway()))
     
     override func setUp() {
         super.setUp()

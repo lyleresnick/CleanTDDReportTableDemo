@@ -10,7 +10,7 @@ class TransactionListAdapterTests: XCTestCase {
     
     private var sut: TransactionListAdapter!
     private let cellConfigurator = StubTransactionListCellConfigurator()
-    private var entityGateway = EntityGatewayFactory.makeEntityGateway()
+    private var entityGateway = FakeNilEntityGateway()
     
 
     override func setUp() {

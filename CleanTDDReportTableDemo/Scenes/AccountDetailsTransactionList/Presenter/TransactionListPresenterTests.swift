@@ -8,7 +8,7 @@ class TransactionListPresenterTests: XCTestCase {
     private var sut: TransactionListPresenter!
     private var stubbedUseCase: StubTransactionListUseCase!
     private var stubbedViewController: StubViewController!
-    private var entityGateway = EntityGatewayFactory.makeEntityGateway()
+    private var entityGateway = FakeNilEntityGateway()
 
     override func setUp() {
         super.setUp()
