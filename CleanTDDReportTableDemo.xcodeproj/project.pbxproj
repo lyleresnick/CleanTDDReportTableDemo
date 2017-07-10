@@ -57,7 +57,7 @@
 		B34B042C1F12C29300D96D90 /* TransactionListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B042A1F12C1F100D96D90 /* TransactionListViewModelTests.swift */; };
 		B366CD7C1F1141A1001E1FC1 /* OneSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */; };
 		B366CD7E1F1141BF001E1FC1 /* TwoSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */; };
-		B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */; };
+		B366CD811F114843001E1FC1 /* EntityGatewayTestFakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B366CD7F1F114831001E1FC1 /* EntityGatewayTestFakes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,7 +125,7 @@
 		B34B042A1F12C1F100D96D90 /* TransactionListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewModelTests.swift; sourceTree = "<group>"; };
 		B366CD7B1F1141A1001E1FC1 /* OneSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneSourceManager.swift; sourceTree = "<group>"; };
 		B366CD7D1F1141BF001E1FC1 /* TwoSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSourceManager.swift; sourceTree = "<group>"; };
-		B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeEntityGateway.swift; sourceTree = "<group>"; };
+		B366CD7F1F114831001E1FC1 /* EntityGatewayTestFakes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGatewayTestFakes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +208,7 @@
 				B314AB221EB1485200C8CF1F /* EntityGatewayFactoryTests.swift */,
 				B314AB231EB1485200C8CF1F /* EntityGatewayImpl.swift */,
 				B314AB241EB1485200C8CF1F /* EntityGatewayImplTests.swift */,
-				B366CD7F1F114831001E1FC1 /* FakeEntityGateway.swift */,
+				B366CD7F1F114831001E1FC1 /* EntityGatewayTestFakes.swift */,
 			);
 			path = EntityGateway;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B366CD811F114843001E1FC1 /* FakeEntityGateway.swift in Sources */,
+				B366CD811F114843001E1FC1 /* EntityGatewayTestFakes.swift in Sources */,
 				B314AB7B1EB148AE00C8CF1F /* TransactionListAdapterTests.swift in Sources */,
 				B314AB7E1EB148B400C8CF1F /* TransactionListViewControllerIBInjectionTests.swift in Sources */,
 				B34B04291F12A0DF00D96D90 /* TransactionListCellTests.swift in Sources */,
