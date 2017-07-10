@@ -23,18 +23,28 @@ class TransactionListViewControllerTests: XCTestCase {
         
         XCTAssertTrue(stubPresenter.viewReadyCalled)
     }
+    
+    func test_showReport_CallsTableViewGetRowCount() {
+        sut.showReport()
+        let dataSource = sut.tableView.dataSource as! StubTransactionListAdapter
+        XCTAssertTrue(dataSource.adapterCalled)
+
+        
+    }
         
     // MARK: Stubs
 
     private class FakeIBLoader {
 
         let tableView = UITableView()
-        let adapter = TransactionListAdapter()
+        let adapter = StubTransactionListAdapter()
 
         func load(sut: TransactionListViewController, presenter: TransactionListPresenter, useCase: TransactionListUseCase) -> TransactionListViewController {
             
             sut.setValue(adapter, forKey: "adapter")
             sut.setValue(tableView, forKey: "tableView")
+            tableView.setValue(adapter, forKey: "delegate")
+            tableView.setValue(adapter, forKey: "dataSource")
             
             TransactionListConnector(viewController: sut, adapter: adapter, useCase: useCase, presenter: presenter).configure()
             return sut
@@ -47,6 +57,23 @@ class TransactionListViewControllerTests: XCTestCase {
         
         override func eventViewReady() {
             viewReadyCalled = true
+        }
+    }
+    
+    class StubTransactionListAdapter: TransactionListAdapter {
+        
+        var adapterCalled = false
+        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            adapterCalled = true
+            return 99
+        }
+        
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
+        }
+        
+        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
         }
     }
 

@@ -5,8 +5,8 @@ import UIKit
 class TransactionListViewController: UIViewController {
 
     var presenter: TransactionListPresenter! 
-    @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet fileprivate weak var adapter: TransactionListAdapter!
+    @IBOutlet fileprivate(set) weak var tableView: UITableView!
+    @IBOutlet fileprivate(set) weak var adapter: TransactionListAdapter!
 
     override func awakeFromNib() {
         super.awakeFromNib()
