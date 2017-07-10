@@ -258,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */,
-				B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */,
 				B314AB301EB1485200C8CF1F /* TransactionListPresenterTests.swift */,
+				B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */,
 				B314AB311EB1485200C8CF1F /* TransactionListViewModel.swift */,
 				B34B042A1F12C1F100D96D90 /* TransactionListViewModelTests.swift */,
 			);
