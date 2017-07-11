@@ -11,6 +11,7 @@ class TransactionListAdapterTests: XCTestCase {
     private var sut: TransactionListAdapter!
     private let cellConfigurator = StubTransactionListCellConfigurator()
     private var entityGateway = FakeNilEntityGateway()
+    var transactionListPresenter: TransactionListPresenter!
     
 
     override func setUp() {
@@ -18,54 +19,38 @@ class TransactionListAdapterTests: XCTestCase {
         
         sut = TransactionListAdapter(cellConfigurator: cellConfigurator)
         sut.presenter = configureTransactionListPresenter()
+        
+        transactionListPresenter.presentInit()
+        transactionListPresenter.presentHeader(group: .authorized)
     }
     
-    private func configureTransactionListPresenter() -> StubTransactionListPresenter {
+    private func configureTransactionListPresenter() -> TransactionListPresenter {
         
         let transactionListUseCase = TransactionListUseCase(entityGateway: entityGateway)
-        let transactionListPresenter = StubTransactionListPresenter(useCase: transactionListUseCase)
+        transactionListPresenter = TransactionListPresenter(useCase: transactionListUseCase)
         transactionListUseCase.output = transactionListPresenter
         return transactionListPresenter
     }
     
     func test_NumberOfRowsInSection_ReturnsRowCountOfPresenter() {
         let x = sut.tableView(UITableView(), numberOfRowsInSection: 0)
-        XCTAssertEqual(x, constantInt)
+        XCTAssertEqual(x, 1)
     }
     
     func test_CellForRowAt_ConfiguresCell() {
-        let _ = sut.tableView(UITableView(), cellForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertTrue(cellConfigurator.wasConfigured)
+        let cell = sut.tableView(UITableView(), cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(cell is TransactionListHeaderCell)
     }
     
     
     func test_HeightForRowAt_ReturnsHeightFromPresenter() {
         let x = sut.tableView(UITableView(), heightForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(x, constantCGFloat)
-    }
-    
-    
-    private class StubTransactionListPresenter: TransactionListPresenter {
-        
-        override var rowCount: Int {
-            return constantInt
-        }
-        
-        override func row(at index: Int ) -> TransactionListViewModel {
-            return .header(title: "Hello")
-        }
-        
-        override func cellHeight(at index: Int) -> CGFloat {
-            return constantCGFloat
-        }
+        XCTAssertEqual(x, sut.presenter.cellHeight(at:0))
     }
     
     private class StubTransactionListCellConfigurator: TransactionListCellConfigurator {
         
-        var wasConfigured = false
-        
         override func show(row: TransactionListViewModel) -> UITableViewCell {
-            wasConfigured = true
             return TransactionListHeaderCell()
         }
     }
