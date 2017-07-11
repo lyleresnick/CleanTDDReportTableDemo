@@ -30,15 +30,6 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
         XCTAssertTrue(sut.presenter === presenter)
     }
     
-    func test_Show_CallsCellsShow() {
-        
-        let stubTransactionListCell = sut.stubTransactionListCell
-        let row = TransactionListViewModel.header(title: "Hello")
-        
-        let _ = sut.set(tableView: tableView, indexPath: indexPath, presenter: presenter).show(row: row)
-        XCTAssertTrue(stubTransactionListCell.didCallShow)
-    }
-    
     func test_Show_CallsCellsShowWithRow() {
         
         let stubTransactionListCell = sut.stubTransactionListCell
@@ -46,7 +37,7 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
         
         let _ = sut.set(tableView: tableView, indexPath: indexPath, presenter: presenter).show(row: row)
         
-        XCTAssertEqual(stubTransactionListCell.row!, row)
+        XCTAssertEqual(stubTransactionListCell.row, row)
     }
     
     class StubTransactionListCellConfigurator: TransactionListCellConfigurator {
@@ -60,11 +51,9 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
     
     class StubTransactionListCell: UITableViewCell, TransactionListCell {
         
-        var didCallShow = false
-        var row: TransactionListViewModel!
+        var row: TransactionListViewModel?
         
         func show(row: TransactionListViewModel) {
-            didCallShow = true
             self.row = row
         }
     }
