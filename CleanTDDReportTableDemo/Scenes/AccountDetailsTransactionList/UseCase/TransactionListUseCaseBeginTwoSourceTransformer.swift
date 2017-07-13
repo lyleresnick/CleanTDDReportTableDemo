@@ -5,12 +5,10 @@ import Foundation
 
 class TransactionListUseCaseBeginTwoSourceTransformer {
     
-    private let authorizedTransactions: [TransactionEntity]?
-    private let postedTransactions: [TransactionEntity]?
+    private let transactionManager: TwoSourceManager
 
-    init(authorizedTransactions: [TransactionEntity]?, postedTransactions: [TransactionEntity]?) {
-        self.authorizedTransactions = authorizedTransactions
-        self.postedTransactions = postedTransactions
+    init(transactionManager: TwoSourceManager) {
+        self.transactionManager = transactionManager
     }
     
     func transform(output: TransactionListUseCaseOutput) {
@@ -18,8 +16,8 @@ class TransactionListUseCaseBeginTwoSourceTransformer {
         output.presentInit()
 
         var grandTotal = 0.0
-        grandTotal += transform(transactions: authorizedTransactions, group: .authorized, output: output)
-        grandTotal += transform(transactions: postedTransactions, group: .posted, output: output)
+        grandTotal += transform(transactions: transactionManager.fetchAuthorizedTransactions(), group: .authorized, output: output)
+        grandTotal += transform(transactions: transactionManager.fetchPostedTransactions(), group: .posted, output: output)
         output.presentGrandFooter(grandTotal: grandTotal)
 
         output.presentReport()

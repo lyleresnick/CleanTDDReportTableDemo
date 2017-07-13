@@ -16,12 +16,7 @@ class TransactionListUseCase {
         
         var transformer = transformer
         if transformer == nil {
-            
-            let authorizedTransactions = entityGateway.twoSourceManager.fetchAuthorizedTransactions()
-            let postedTransactions = entityGateway.twoSourceManager.fetchPostedTransactions()
-            transformer = TransactionListUseCaseBeginTwoSourceTransformer(
-                authorizedTransactions: authorizedTransactions,
-                postedTransactions: postedTransactions)
+            transformer = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: entityGateway.twoSourceManager)
         }
         transformer!.transform(output: output)
     }
@@ -30,10 +25,7 @@ class TransactionListUseCase {
         
         var transformer = transformer
         if transformer == nil {
-            
-            let allTransactions = entityGateway.oneSourceManager.fetchAllTransactions()
-            transformer = TransactionListUseCaseBeginOneSourceTransformer(
-                allTransactions: allTransactions)
+            transformer = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: entityGateway.oneSourceManager)
         }
         transformer!.transform(output: output)
     }

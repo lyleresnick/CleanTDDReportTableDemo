@@ -5,18 +5,18 @@ import Foundation
 
 class TransactionListUseCaseBeginOneSourceTransformer {
     
-    private let allTransactions: [TransactionEntity]?
-    
-    init(allTransactions: [TransactionEntity]?) {
-        self.allTransactions = allTransactions
+    private let transactionManager: OneSourceManager
+
+    init(transactionManager: OneSourceManager) {
+        self.transactionManager = transactionManager
     }
-    
+
     func transform(output: TransactionListUseCaseOutput) {
         
         var grandTotal = 0.0
         output.presentInit()
 
-        if let allTransactions = allTransactions {
+        if let allTransactions = transactionManager.fetchAllTransactions() {
 
             var groupStream = ([.authorized, .posted] as [TransactionGroup]).makeIterator()
             var currentGroup = groupStream.next()

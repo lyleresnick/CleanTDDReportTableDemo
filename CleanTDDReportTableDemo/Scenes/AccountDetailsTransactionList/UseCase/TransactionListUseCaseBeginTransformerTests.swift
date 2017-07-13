@@ -13,7 +13,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
     func test_transform_TwoSourceAuthNonePostedNone() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: [], postedTransactions: [])
+        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
@@ -22,7 +22,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
     func test_transform_TwoSourceAuthNotFoundPostedNotFound() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: nil, postedTransactions: nil)
+        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeNilTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNotFoundPostedNotFoundOutput)
@@ -31,7 +31,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_OneSourceAuthNonePostedNone() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: [])
+        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeNoneOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
@@ -40,7 +40,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_OneSourceNotFound() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: nil)
+        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeNilOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allNotFoundOutput)
@@ -98,15 +98,29 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_TwoSource() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(authorizedTransactions: TransactionListUseCaseBeginTransformerTests.authorizedData, postedTransactions: TransactionListUseCaseBeginTransformerTests.postedData)
+        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeSomeTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)
     }
+
+    class FakeSomeOneSourceManagerImpl: OneSourceManager {
+
+        func fetchAllTransactions() -> [TransactionEntity]? {
+            return authorizedData + postedData
+        }
+    }
+
+    class FakeSomeTwoSourceManagerImpl: TwoSourceManager {
+
+        func fetchAuthorizedTransactions() -> [TransactionEntity]? { return authorizedData }
+        func fetchPostedTransactions() -> [TransactionEntity]? { return postedData }
+    }
+
     
     func test_transform_OneSource() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(allTransactions: TransactionListUseCaseBeginTransformerTests.authorizedData + TransactionListUseCaseBeginTransformerTests.postedData)
+        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeSomeOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)

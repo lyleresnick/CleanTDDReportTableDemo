@@ -13,7 +13,7 @@ class TransactionListUseCaseOneSourceTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        oneSourceTransformer = StubTransactionListUseCaseBeginOneSourceTransformer(allTransactions: [])
+        oneSourceTransformer = StubTransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeNoneOneSourceManagerImpl())
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)

@@ -5,20 +5,35 @@ import XCTest
 @testable import CleanTDDReportTableDemo
 
 class FakeNilEntityGateway: EntityGateway {
-    var oneSourceManager: OneSourceManager = NilOneSourceManagerImpl()
-    var twoSourceManager: TwoSourceManager = NilTwoSourceManagerImpl()
+    var oneSourceManager: OneSourceManager = FakeNilOneSourceManagerImpl()
+    var twoSourceManager: TwoSourceManager = FakeNilTwoSourceManagerImpl()
 }
 
-class NilOneSourceManagerImpl: OneSourceManager {
+class FakeNilOneSourceManagerImpl: OneSourceManager {
     
-    func fetchAllTransactions() -> [TransactionEntity]? {
-        return nil
-    }
+    func fetchAllTransactions() -> [TransactionEntity]? { return nil }
 }
 
-class NilTwoSourceManagerImpl: TwoSourceManager {
+class FakeNilTwoSourceManagerImpl: TwoSourceManager {
     
     func fetchAuthorizedTransactions() -> [TransactionEntity]? { return nil }
     func fetchPostedTransactions() -> [TransactionEntity]? { return nil }
+}
+
+
+class FakeNoneEntityGateway: EntityGateway {
+    var oneSourceManager: OneSourceManager = FakeNoneOneSourceManagerImpl()
+    var twoSourceManager: TwoSourceManager = FakeNoneTwoSourceManagerImpl()
+}
+
+class FakeNoneOneSourceManagerImpl: OneSourceManager {
+
+    func fetchAllTransactions() -> [TransactionEntity]? { return [] }
+}
+
+class FakeNoneTwoSourceManagerImpl: TwoSourceManager {
+
+    func fetchAuthorizedTransactions() -> [TransactionEntity]? { return [] }
+    func fetchPostedTransactions() -> [TransactionEntity]? { return [] }
 }
 
