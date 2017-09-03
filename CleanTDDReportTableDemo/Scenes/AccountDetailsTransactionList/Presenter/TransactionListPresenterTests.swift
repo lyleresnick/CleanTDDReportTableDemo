@@ -20,9 +20,9 @@ class TransactionListPresenterTests: XCTestCase {
         sut.output = stubbedViewController
     }
 
-    func test_eventViewReady_CallsUseCase_beginTwoSource() {
+    func test_eventViewReady_CallsUseCase_viewReadyTwoSource() {
         sut.eventViewReady()
-        XCTAssertTrue(stubbedUseCase.beginCalled)
+        XCTAssertTrue(stubbedUseCase.viewReadyCalled)
     }
     
     func test_presentReport_callsShowReport() {
@@ -34,10 +34,10 @@ class TransactionListPresenterTests: XCTestCase {
 
     class StubTransactionListUseCase: TransactionListUseCase {
 
-        var beginCalled = false
+        var viewReadyCalled = false
 
-        override func begin(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer?) {
-            beginCalled = true
+        override func eventViewReady(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer?) {
+            viewReadyCalled = true
         }
     }
 

@@ -18,7 +18,7 @@ class TransactionListPresenter {
     }
 
     func eventViewReady() {
-        useCase.begin()
+        useCase.eventViewReady()
     }
     
     func cellId(at index: Int) -> String {

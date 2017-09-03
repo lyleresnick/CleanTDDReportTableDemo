@@ -12,7 +12,7 @@ class TransactionListUseCase {
         self.entityGateway = entityGateway
     }
     
-    func begin(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer? = nil) {
+    func eventViewReady(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer? = nil) {
         
         var transformer = transformer
         if transformer == nil {
@@ -21,7 +21,7 @@ class TransactionListUseCase {
         transformer!.transform(output: output)
     }
     
-    func beginOneSource(transformer: TransactionListViewReadyOneSourceUseCaseTransformer? = nil) {
+    func eventViewReadyOneSource(transformer: TransactionListViewReadyOneSourceUseCaseTransformer? = nil) {
         
         var transformer = transformer
         if transformer == nil {

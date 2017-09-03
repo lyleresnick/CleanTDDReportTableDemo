@@ -20,9 +20,9 @@ class TransactionListTwoSourceUseCaseTests: XCTestCase {
         sut.output = stubPresenter
     }
 
-    func test_beginTwoSource_CallsTransformerWithPresenter() {
+    func test_viewReadyTwoSource_CallsTransformerWithPresenter() {
 
-        sut.begin(transformer: twoSourceTransformer)
+        sut.eventViewReady(transformer: twoSourceTransformer)
         XCTAssertTrue(twoSourceTransformer.output === stubPresenter)
     }
 

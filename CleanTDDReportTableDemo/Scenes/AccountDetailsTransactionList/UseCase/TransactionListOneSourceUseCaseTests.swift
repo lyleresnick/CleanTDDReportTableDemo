@@ -20,15 +20,15 @@ class TransactionListOneSourceUseCaseTests: XCTestCase {
         sut.output = stubPresenter
     }
 
-    func test_beginOneSource_CallsTransformer() {
+    func test_viewReadyOneSource_CallsTransformer() {
         
-        sut.beginOneSource(transformer: oneSourceTransformer)
+        sut.eventViewReadyOneSource(transformer: oneSourceTransformer)
         XCTAssertTrue(oneSourceTransformer.didCall)
     }
     
-    func test_beginOneSource_CallsTransformerWithPresenter() {
+    func test_viewReadyOneSource_CallsTransformerWithPresenter() {
         
-        sut.beginOneSource(transformer: oneSourceTransformer)
+        sut.eventViewReadyOneSource(transformer: oneSourceTransformer)
         XCTAssertTrue(oneSourceTransformer.presenter === stubPresenter)
     }
 
