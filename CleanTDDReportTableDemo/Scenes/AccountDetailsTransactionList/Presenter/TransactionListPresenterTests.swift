@@ -36,7 +36,7 @@ class TransactionListPresenterTests: XCTestCase {
 
         var beginCalled = false
 
-        override func begin(transformer: TransactionListUseCaseBeginTwoSourceTransformer?) {
+        override func begin(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer?) {
             beginCalled = true
         }
     }

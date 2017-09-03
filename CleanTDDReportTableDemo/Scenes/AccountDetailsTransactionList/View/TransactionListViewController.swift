@@ -23,7 +23,11 @@ class TransactionListViewController: UIViewController {
 
 // MARK: - TransactionListPresenterOutput
 
-extension TransactionListViewController: TransactionListPresenterOutput {
+extension TransactionListViewController: TransactionListPresenterOutput {}
+    
+// MARK: - TransactionListViewReadyPresenterOutput
+
+extension TransactionListViewController: TransactionListViewReadyPresenterOutput {
     
     func showReport() {
         tableView.reloadData()

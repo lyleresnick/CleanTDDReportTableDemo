@@ -3,7 +3,7 @@
 import Foundation
 
 
-class TransactionListUseCaseBeginOneSourceTransformer {
+class TransactionListViewReadyOneSourceUseCaseTransformer {
     
     private let transactionManager: OneSourceManager
 
@@ -11,7 +11,7 @@ class TransactionListUseCaseBeginOneSourceTransformer {
         self.transactionManager = transactionManager
     }
 
-    func transform(output: TransactionListUseCaseOutput) {
+    func transform(output: TransactionListViewReadyUseCaseOutput) {
         
         var grandTotal = 0.0
         output.presentInit()

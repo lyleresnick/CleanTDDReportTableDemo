@@ -3,17 +3,17 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListUseCaseTwoSourceTests: XCTestCase {
+class TransactionListTwoSourceUseCaseTests: XCTestCase {
     private var sut: TransactionListUseCase!
     private var stubPresenter: StubTransactionListPresenter!
     private var entityGateway = FakeNilEntityGateway()
 
-    private var twoSourceTransformer: StubTransactionListUseCaseBeginTwoSourceTransformer!
+    private var twoSourceTransformer: StubTransactionListViewReadyTwoSourceUseCaseTransformer!
 
     override func setUp() {
         super.setUp()
 
-        twoSourceTransformer = StubTransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
+        twoSourceTransformer = StubTransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)
@@ -28,13 +28,13 @@ class TransactionListUseCaseTwoSourceTests: XCTestCase {
 
     // MARK: Stubs
 
-    class StubTransactionListUseCaseBeginTwoSourceTransformer: TransactionListUseCaseBeginTwoSourceTransformer {
+    class StubTransactionListViewReadyTwoSourceUseCaseTransformer: TransactionListViewReadyTwoSourceUseCaseTransformer {
 
         var output: TransactionListUseCaseOutput!
 
-        override func transform( output: TransactionListUseCaseOutput ) {
+        override func transform( output: TransactionListViewReadyUseCaseOutput ) {
 
-            self.output = output
+            self.output = output as! TransactionListUseCaseOutput
         }
     }
 

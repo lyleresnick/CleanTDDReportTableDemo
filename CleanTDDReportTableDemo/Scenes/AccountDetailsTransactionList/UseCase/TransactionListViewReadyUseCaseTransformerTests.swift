@@ -3,7 +3,7 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListUseCaseBeginTransformerTests: XCTestCase {
+class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
 
     private var presenter = StubTransactionListPresenter()
 
@@ -13,7 +13,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
     func test_transform_TwoSourceAuthNonePostedNone() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
+        let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
@@ -22,7 +22,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
     func test_transform_TwoSourceAuthNotFoundPostedNotFound() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeNilTwoSourceManagerImpl())
+        let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeNilTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNotFoundPostedNotFoundOutput)
@@ -31,7 +31,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_OneSourceAuthNonePostedNone() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeNoneOneSourceManagerImpl())
+        let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeNoneOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == authNonePostedNoneOutput)
@@ -40,7 +40,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_OneSourceNotFound() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeNilOneSourceManagerImpl())
+        let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeNilOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allNotFoundOutput)
@@ -98,7 +98,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_TwoSource() {
         
-        let sut = TransactionListUseCaseBeginTwoSourceTransformer(transactionManager: FakeSomeTwoSourceManagerImpl())
+        let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeSomeTwoSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)
@@ -120,7 +120,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
     
     func test_transform_OneSource() {
         
-        let sut = TransactionListUseCaseBeginOneSourceTransformer(transactionManager: FakeSomeOneSourceManagerImpl())
+        let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeSomeOneSourceManagerImpl())
         sut.transform(output: presenter)
         
         XCTAssertTrue(presenter.rows == allOutput)
@@ -191,7 +191,7 @@ class TransactionListUseCaseBeginTransformerTests: XCTestCase {
 
 }
 
-private typealias FTLVM = TransactionListUseCaseBeginTransformerTests.FakeTransactionListViewModel
+private typealias FTLVM = TransactionListViewReadyUseCaseTransformerTests.FakeTransactionListViewModel
     
 private let tailOutput: [FTLVM] = [.grandfooter, .report]
 

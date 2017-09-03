@@ -34,9 +34,14 @@ class TransactionListPresenter {
     func row(at index: Int) -> TransactionListViewModel { return rows[ index ] }
 }
 
+
 // MARK: TransactionListUseCaseOutput
 
-extension TransactionListPresenter: TransactionListUseCaseOutput {
+extension TransactionListPresenter: TransactionListUseCaseOutput {}
+
+// MARK: TransactionListViewReadyUseCaseOutput
+
+extension TransactionListPresenter: TransactionListViewReadyUseCaseOutput {
     
     func presentInit() {
         odd = false
