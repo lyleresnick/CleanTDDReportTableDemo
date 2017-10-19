@@ -1,3 +1,3 @@
 There are no tests here!
 
-The tests for a given class reside in the directory where the class resides.
+The tests reside in the same dirctory as the classes under test.
