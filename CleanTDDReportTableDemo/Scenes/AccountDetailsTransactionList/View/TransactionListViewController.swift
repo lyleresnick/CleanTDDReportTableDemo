@@ -18,14 +18,10 @@ class TransactionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureAdapter()
-        presenter.eventViewReady()
-    }
-    
-    private func configureAdapter() {
-        
         tableView.delegate = adapter
         tableView.dataSource = adapter
+
+        presenter.eventViewReady()
     }
 }
 
