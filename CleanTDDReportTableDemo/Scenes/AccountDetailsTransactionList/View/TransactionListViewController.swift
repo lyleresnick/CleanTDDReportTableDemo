@@ -6,18 +6,26 @@ class TransactionListViewController: UIViewController {
 
     var presenter: TransactionListPresenter! 
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
-    @IBOutlet fileprivate(set) weak var adapter: TransactionListAdapter!
+    var adapter: TransactionListAdapter!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        TransactionListConnector(viewController: self, adapter: adapter).configure()
+        TransactionListConnector(viewController: self).configure()
+        adapter = TransactionListAdapter(presenter: presenter)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureAdapter()
         presenter.eventViewReady()
+    }
+    
+    private func configureAdapter() {
+        
+        tableView.delegate = adapter
+        tableView.dataSource = adapter
     }
 }
 

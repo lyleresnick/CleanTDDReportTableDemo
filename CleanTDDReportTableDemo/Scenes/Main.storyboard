@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HsP-4v-7D5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HsP-4v-7D5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Transaction Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="TransactionListViewController" id="BYZ-38-t0r" customClass="TransactionListViewController" customModule="CleanReportTableDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionListViewController" id="BYZ-38-t0r" customClass="TransactionListViewController" customModule="CleanTDDReportTableDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="50" id="Bej-hw-nQ9" customClass="TransactionListHeaderCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="50" id="Bej-hw-nQ9" customClass="TransactionListHeaderCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bej-hw-nQ9" id="JIM-Xq-JZH">
@@ -49,7 +49,7 @@
                                             <outlet property="titleLabel" destination="UwP-oO-9Xf" id="Fe6-Vv-Q1f"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" id="RAb-SX-mTq" customClass="TransactionListSubheaderCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subheader" id="RAb-SX-mTq" customClass="TransactionListSubheaderCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RAb-SX-mTq" id="wOk-Ql-ttr">
@@ -72,7 +72,7 @@
                                             <outlet property="titleLabel" destination="F1h-8c-rrX" id="Iy2-gv-Vzi"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" rowHeight="23" id="ubN-Kf-Nfd" customClass="TransactionListDetailCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detail" rowHeight="23" id="ubN-Kf-Nfd" customClass="TransactionListDetailCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="122" width="375" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubN-Kf-Nfd" id="A8T-NR-cdo">
@@ -104,7 +104,7 @@
                                             <outlet property="descriptionLabel" destination="tuJ-67-3WF" id="XT5-0l-7AN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subfooter" rowHeight="12" id="Wni-il-Coz" customClass="TransactionListSubfooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subfooter" rowHeight="12" id="Wni-il-Coz" customClass="TransactionListSubfooterCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="145" width="375" height="12"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wni-il-Coz" id="BPI-uv-oHe">
@@ -112,7 +112,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" id="qVW-Qo-6aY" customClass="TransactionListFooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="footer" id="qVW-Qo-6aY" customClass="TransactionListFooterCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qVW-Qo-6aY" id="WYQ-V7-WAz">
@@ -143,7 +143,7 @@
                                             <outlet property="totalLabel" destination="9Oe-Jd-rag" id="rJc-GJ-Jgm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="message" rowHeight="70" id="vJj-jB-TdO" customClass="TransactionListMessageCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="message" rowHeight="70" id="vJj-jB-TdO" customClass="TransactionListMessageCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="201" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJj-jB-TdO" id="slc-GK-gK4">
@@ -167,7 +167,7 @@
                                             <outlet property="messageLabel" destination="Geo-Kv-9as" id="Lzj-in-5BF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="grandfooter" id="cWB-D7-yS6" customClass="TransactionListGrandFooterCell" customModule="CleanReportTableDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="grandfooter" id="cWB-D7-yS6" customClass="TransactionListGrandFooterCell" customModule="CleanTDDReportTableDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cWB-D7-yS6" id="2xg-M3-o9b">
@@ -175,7 +175,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb3-M3-VxA">
-                                                    <rect key="frame" x="25" y="12" width="85" height="20"/>
+                                                    <rect key="frame" x="25" y="12" width="84" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.9959705472" green="0.99614065890000003" blue="0.99595981840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -200,10 +200,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="LMI-TK-6S6" id="Onc-Vj-zzk"/>
-                                    <outlet property="delegate" destination="LMI-TK-6S6" id="ZB8-g6-ero"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -216,12 +212,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Transaction Details" id="afP-F4-AtQ"/>
                     <connections>
-                        <outlet property="adapter" destination="LMI-TK-6S6" id="bqd-uG-1ih"/>
                         <outlet property="tableView" destination="kDh-kr-cA1" id="T2O-Fn-V30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="LMI-TK-6S6" customClass="TransactionListAdapter" customModule="CleanReportTableDemo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1080" y="-2"/>
         </scene>
@@ -231,7 +225,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HsP-4v-7D5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jok-Ax-NMh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

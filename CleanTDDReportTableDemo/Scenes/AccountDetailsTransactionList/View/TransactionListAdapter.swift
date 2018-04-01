@@ -4,14 +4,12 @@ import UIKit
 
 class TransactionListAdapter: NSObject {
     
-    var presenter: TransactionListPresenter!
-    fileprivate var cellConfigurator: TransactionListCellConfigurator
+    let presenter: TransactionListPresenter
+    fileprivate let cellConfigurator: TransactionListCellConfigurator
     
-    // organized to satisfy IB, because it calls init on an ObjC object
-    override convenience init() {
-        self.init(cellConfigurator: TransactionListCellConfigurator() )
-    }
-    init(cellConfigurator: TransactionListCellConfigurator ) {
+    init(presenter: TransactionListPresenter, cellConfigurator: TransactionListCellConfigurator = TransactionListCellConfigurator()) {
+        
+        self.presenter = presenter
         self.cellConfigurator = cellConfigurator
     }
 }

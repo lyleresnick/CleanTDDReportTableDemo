@@ -17,20 +17,23 @@ class TransactionListAdapterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        sut = TransactionListAdapter(cellConfigurator: cellConfigurator)
-        sut.presenter = configureTransactionListPresenter()
+        configureTransactionListPresenter()
+        sut = TransactionListAdapter(presenter: transactionListPresenter, cellConfigurator: cellConfigurator)
         
         transactionListPresenter.presentInit()
         transactionListPresenter.presentHeader(group: .authorized)
     }
     
-    private func configureTransactionListPresenter() -> TransactionListPresenter {
+    private func configureTransactionListPresenter() {
         
         let transactionListUseCase = TransactionListUseCase(entityGateway: entityGateway)
         transactionListPresenter = TransactionListPresenter(useCase: transactionListUseCase)
-        return transactionListPresenter
     }
     
+    func test_Init_SetsPresenter() {
+        XCTAssertTrue(sut.presenter === transactionListPresenter)
+    }
+
     func test_NumberOfRowsInSection_ReturnsRowCountOfPresenter() {
         let x = sut.tableView(UITableView(), numberOfRowsInSection: 0)
         XCTAssertEqual(x, 1)

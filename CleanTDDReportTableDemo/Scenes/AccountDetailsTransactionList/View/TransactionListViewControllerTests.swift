@@ -14,11 +14,30 @@ class TransactionListViewControllerTests: XCTestCase {
 
         let useCase = TransactionListUseCase( entityGateway: FakeNilEntityGateway())
         stubPresenter = StubTransactionListPresenter(useCase: useCase )
-        sut = fakeIBLoader.load( sut: TransactionListViewController(), presenter: stubPresenter, useCase: useCase )
+        sut = fakeIBLoader.load( sut: TransactionListViewController())
+        TransactionListConnector(viewController: sut, useCase: useCase, presenter: stubPresenter).configure()
+        sut.adapter = StubTransactionListAdapter(presenter: stubPresenter)
 
         _ = sut.view
     }
     
+    
+    func test_viewDidLoad_SetsAdapter() {
+        
+        XCTAssertNotNil(sut.adapter)
+    }
+    
+    func test_viewDidLoad_SetsTableViewDataSource() {
+        
+        XCTAssertTrue(sut.tableView.dataSource === sut.adapter)
+    }
+    
+    func test_viewDidLoad_SetsTableViewDelegate() {
+        
+        XCTAssertTrue(sut.tableView.delegate === sut.adapter)
+    }
+    
+
     func test_viewDidLoad_CallsPresenterEventViewReady() {
         
         XCTAssertTrue(stubPresenter.viewReadyCalled)
@@ -37,16 +56,10 @@ class TransactionListViewControllerTests: XCTestCase {
     private class FakeIBLoader {
 
         let tableView = UITableView()
-        let adapter = StubTransactionListAdapter()
 
-        func load(sut: TransactionListViewController, presenter: TransactionListPresenter, useCase: TransactionListUseCase) -> TransactionListViewController {
+        func load(sut: TransactionListViewController) -> TransactionListViewController {
             
-            sut.setValue(adapter, forKey: "adapter")
             sut.setValue(tableView, forKey: "tableView")
-            tableView.setValue(adapter, forKey: "delegate")
-            tableView.setValue(adapter, forKey: "dataSource")
-            
-            TransactionListConnector(viewController: sut, adapter: adapter, useCase: useCase, presenter: presenter).configure()
             return sut
         }
     }
