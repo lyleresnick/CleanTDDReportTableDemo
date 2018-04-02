@@ -24,9 +24,6 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
     func test_IB_InjectsAllSutOutlets() {
         
         XCTAssertNotNil(tableView)
-        XCTAssertNotNil(sut.value(forKey: "adapter"))
-        XCTAssertNotNil(tableView.value(forKey: "dataSource"))
-        XCTAssertNotNil(tableView.value(forKey: "delegate"))
     }
     
     func test_tableView_CanDequeueAllCellIds() {
