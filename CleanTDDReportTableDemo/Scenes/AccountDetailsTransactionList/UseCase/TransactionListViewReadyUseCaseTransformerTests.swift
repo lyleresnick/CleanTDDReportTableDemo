@@ -11,7 +11,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
         super.setUp()
     }
 
-    func test_transform_TwoSourceAuthNonePostedNone() {
+    func test_transformTwoSource_AuthNonePostedNone_mapsCorrectly() {
         
         let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeNoneTwoSourceManagerImpl())
         sut.transform(output: presenter)
@@ -20,7 +20,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
     }
 
 
-    func test_transform_TwoSourceAuthNotFoundPostedNotFound() {
+    func test_transformTwoSource_AuthNotFoundPostedNotFound_mapsCorrectly() {
         
         let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeNilTwoSourceManagerImpl())
         sut.transform(output: presenter)
@@ -29,7 +29,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
     }
     
     
-    func test_transform_OneSourceAuthNonePostedNone() {
+    func test_transformOneSource_AuthNonePostedNone_mapsCorrectly() {
         
         let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeNoneOneSourceManagerImpl())
         sut.transform(output: presenter)
@@ -38,7 +38,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
     }
     
     
-    func test_transform_OneSourceNotFound() {
+    func test_transformOneSource_NotFound_mapsCorrectly() {
         
         let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeNilOneSourceManagerImpl())
         sut.transform(output: presenter)
@@ -96,7 +96,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
         TransactionEntity( group: "P", date: "2016-05-17", description: "LCBO", amount: "400.55", debit: "D" ),
     ]
     
-    func test_transform_TwoSource() {
+    func test_transformTwoSource_All_mapsCorrectly() {
         
         let sut = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: FakeSomeTwoSourceManagerImpl())
         sut.transform(output: presenter)
@@ -118,7 +118,7 @@ class TransactionListViewReadyUseCaseTransformerTests: XCTestCase {
     }
 
     
-    func test_transform_OneSource() {
+    func test_transformOneSource_mapsCorrectly_All() {
         
         let sut = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: FakeSomeOneSourceManagerImpl())
         sut.transform(output: presenter)
