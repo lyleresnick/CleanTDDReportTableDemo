@@ -22,7 +22,7 @@ class TransactionListCellConfigurator {
     }
     
     func tableCell(presenter: TransactionListPresenter) -> UITableViewCell {
-        return tableView!.dequeueReusableCell(withIdentifier: presenter.cellId(at: indexPath.row), for: indexPath!)
+        return tableView.dequeueReusableCell(withIdentifier: presenter.cellId(at: indexPath.row), for: indexPath)
     }
 }
 

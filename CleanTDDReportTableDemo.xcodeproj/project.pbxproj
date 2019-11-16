@@ -10,7 +10,6 @@
 		B314AAF71EB147ED00C8CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AAF61EB147ED00C8CF1F /* AppDelegate.swift */; };
 		B314AAFE1EB147ED00C8CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B314AAFD1EB147ED00C8CF1F /* Assets.xcassets */; };
 		B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AAFF1EB147ED00C8CF1F /* LaunchScreen.storyboard */; };
-		B314AB4B1EB1485200C8CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B314AB161EB1485200C8CF1F /* Assets.xcassets */; };
 		B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */; };
 		B314AB4E1EB1485200C8CF1F /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1D1EB1485200C8CF1F /* TransactionEntity.swift */; };
 		B314AB4F1EB1485200C8CF1F /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1E1EB1485200C8CF1F /* TransactionGroup.swift */; };
@@ -365,7 +364,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Lyle Resnick";
 				TargetAttributes = {
 					B314AAF21EB147ED00C8CF1F = {
@@ -376,6 +375,7 @@
 					B314AB061EB147ED00C8CF1F = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = JTC7H5GCJ5;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = B314AAF21EB147ED00C8CF1F;
 					};
@@ -386,6 +386,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -408,7 +409,6 @@
 				B314AB721EB1485200C8CF1F /* Main.storyboard in Resources */,
 				B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */,
 				B314AAFE1EB147ED00C8CF1F /* Assets.xcassets in Resources */,
-				B314AB4B1EB1485200C8CF1F /* Assets.xcassets in Resources */,
 				B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,15 +527,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -578,15 +586,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -621,7 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cellarpoint.CleanTDDReportTableDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -634,7 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cellarpoint.CleanTDDReportTableDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -648,7 +664,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cellarpoint.CleanTDDReportTableDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTDDReportTableDemo.app/CleanTDDReportTableDemo";
 			};
 			name = Debug;
@@ -663,7 +680,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cellarpoint.CleanTDDReportTableDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTDDReportTableDemo.app/CleanTDDReportTableDemo";
 			};
 			name = Release;

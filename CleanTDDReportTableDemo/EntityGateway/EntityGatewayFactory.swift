@@ -4,12 +4,12 @@ import Foundation
 
 class EntityGatewayFactory {
     
-    static var gateway: EntityGateway? = nil
+    static var gateway: EntityGateway!
     
     static func makeEntityGateway() -> EntityGateway {
         if gateway == nil {
             gateway = EntityGatewayImpl()
         }
-        return gateway!
+        return gateway
     }
 }

@@ -14,11 +14,11 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
         EntityGatewayFactory.gateway = FakeNilEntityGateway()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: String(describing: TransactionListViewController.self) ) as! TransactionListViewController
+        sut = storyboard.instantiateViewController(withIdentifier: String(describing: TransactionListViewController.self) ) as? TransactionListViewController
         
         _ = sut.view
         
-        tableView = sut.value(forKey: "tableView") as! UITableView
+        tableView = sut.value(forKey: "tableView") as? UITableView
     }
     
     func test_IB_InjectsAllSutOutlets() {

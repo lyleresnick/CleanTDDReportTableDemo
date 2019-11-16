@@ -34,7 +34,7 @@ class TransactionListTwoSourceUseCaseTests: XCTestCase {
 
         override func transform( output: TransactionListViewReadyUseCaseOutput ) {
 
-            self.output = output as! TransactionListUseCaseOutput
+            self.output = output as? TransactionListUseCaseOutput
         }
     }
 

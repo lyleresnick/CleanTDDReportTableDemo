@@ -42,7 +42,7 @@ class TransactionListOneSourceUseCaseTests: XCTestCase {
         override func transform( output presenter: TransactionListViewReadyUseCaseOutput ) {
             
             didCall = true
-            self.presenter = presenter as! TransactionListUseCaseOutput
+            self.presenter = presenter as? TransactionListUseCaseOutput
         }
     }
     
