@@ -15,7 +15,7 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
         super.setUp()
         sut = StubTransactionListCellConfigurator()
         
-        let _ = sut.set(tableView: tableView, indexPath: indexPath, presenter: presenter)
+        let _ = sut.set(tableView: tableView, indexPath: indexPath)
     }
     
     func test_Set_SetsTableView() {
@@ -25,17 +25,13 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
     func test_Set_SetsIndexPath() {
         XCTAssertEqual(sut.indexPath, indexPath)
     }
-    
-    func test_Set_SetsPresenter() {
-        XCTAssertTrue(sut.presenter === presenter)
-    }
-    
+        
     func test_Show_CallsCellsShowWithRow() {
         
         let stubTransactionListCell = sut.stubTransactionListCell
-        let row = TransactionListViewModel.header(title: "Hello")
+        let row = TransactionListRowViewModel.header(title: "Hello")
         
-        let _ = sut.set(tableView: tableView, indexPath: indexPath, presenter: presenter).show(row: row)
+        let _ = sut.set(tableView: tableView, indexPath: indexPath).show(row: row)
         
         XCTAssertEqual(stubTransactionListCell.row, row)
     }
@@ -44,24 +40,24 @@ class TransactionViewListCellConfiguratorTests: XCTestCase {
         
         let stubTransactionListCell = StubTransactionListCell()
         
-        override func tableCell(presenter: TransactionListPresenter) -> UITableViewCell {
+        override func tableCell(row: TransactionListRowViewModel) -> UITableViewCell {
             return stubTransactionListCell
         }
     }
     
     class StubTransactionListCell: UITableViewCell, TransactionListCell {
         
-        var row: TransactionListViewModel?
+        var row: TransactionListRowViewModel?
         
-        func show(row: TransactionListViewModel) {
+        func show(row: TransactionListRowViewModel) {
             self.row = row
         }
     }
 }
 
-extension TransactionListViewModel: Equatable {}
+extension TransactionListRowViewModel: Equatable {}
 
-public func == (lhs: TransactionListViewModel, rhs: TransactionListViewModel) -> Bool {
+public func == (lhs: TransactionListRowViewModel, rhs: TransactionListRowViewModel) -> Bool {
     
     switch (lhs, rhs) {
     case let (.header(a), .header(b)) :

@@ -6,7 +6,7 @@ class TransactionListFooterCell: UITableViewCell, TransactionListCell {
     
     @IBOutlet private var totalLabel: UILabel!
     
-    func show(row: TransactionListViewModel) {
+    func show(row: TransactionListRowViewModel) {
         
         guard case let .footer(total, odd) = row else { fatalError("Expected: footer") }
         totalLabel.text = total

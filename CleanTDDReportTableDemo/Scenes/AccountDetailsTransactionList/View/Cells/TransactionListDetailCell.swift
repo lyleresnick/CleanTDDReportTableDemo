@@ -7,7 +7,7 @@ class TransactionListDetailCell: UITableViewCell, TransactionListCell {
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var amountLabel: UILabel!
     
-    func show(row: TransactionListViewModel) {
+    func show(row: TransactionListRowViewModel) {
         
         guard case let .detail( description, amount, odd ) = row else { fatalError("Expected: detail") }
         descriptionLabel.text = description

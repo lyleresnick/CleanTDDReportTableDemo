@@ -18,10 +18,9 @@ class TransactionListAdapterTests: XCTestCase {
         super.setUp()
         
         configureTransactionListPresenter()
-        sut = TransactionListAdapter(presenter: transactionListPresenter, cellConfigurator: cellConfigurator)
+        sut = TransactionListAdapter(cellConfigurator: cellConfigurator)
+        sut.rows = [.header(title: "Test") ]
         
-        transactionListPresenter.presentInit()
-        transactionListPresenter.presentHeader(group: .authorized)
     }
     
     private func configureTransactionListPresenter() {
@@ -30,10 +29,6 @@ class TransactionListAdapterTests: XCTestCase {
         transactionListPresenter = TransactionListPresenter(useCase: transactionListUseCase)
     }
     
-    func test_Init_SetsPresenter() {
-        XCTAssertTrue(sut.presenter === transactionListPresenter)
-    }
-
     func test_NumberOfRowsInSection_ReturnsRowCountOfPresenter() {
         let x = sut.tableView(UITableView(), numberOfRowsInSection: 0)
         XCTAssertEqual(x, 1)
@@ -44,15 +39,9 @@ class TransactionListAdapterTests: XCTestCase {
         XCTAssertTrue(cell is TransactionListHeaderCell)
     }
     
-    
-    func test_HeightForRowAt_ReturnsHeightFromPresenter() {
-        let x = sut.tableView(UITableView(), heightForRowAt: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(x, sut.presenter.cellHeight(at:0))
-    }
-    
     private class StubTransactionListCellConfigurator: TransactionListCellConfigurator {
         
-        override func show(row: TransactionListViewModel) -> UITableViewCell {
+        override func show(row: TransactionListRowViewModel) -> UITableViewCell {
             return TransactionListHeaderCell()
         }
     }

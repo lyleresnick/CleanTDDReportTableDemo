@@ -16,7 +16,7 @@ class TransactionListViewControllerTests: XCTestCase {
         stubPresenter = StubTransactionListPresenter(useCase: useCase )
         sut = fakeIBLoader.load( sut: TransactionListViewController())
         TransactionListConnector(viewController: sut, useCase: useCase, presenter: stubPresenter).configure()
-        sut.adapter = StubTransactionListAdapter(presenter: stubPresenter)
+        sut.adapter = StubTransactionListAdapter()
 
         _ = sut.view
     }
@@ -32,19 +32,13 @@ class TransactionListViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.tableView.dataSource === sut.adapter)
     }
     
-    func test_viewDidLoad_SetsTableViewDelegate() {
-        
-        XCTAssertTrue(sut.tableView.delegate === sut.adapter)
-    }
-    
-
     func test_viewDidLoad_CallsPresenterEventViewReady() {
         
         XCTAssertTrue(stubPresenter.viewReadyCalled)
     }
     
     func test_showReport_CallsTableViewGetRowCount() {
-        sut.showReport()
+        sut.showReport(rows: [])
         let dataSource = sut.tableView.dataSource as! StubTransactionListAdapter
         XCTAssertTrue(dataSource.adapterCalled)
 
@@ -84,11 +78,6 @@ class TransactionListViewControllerTests: XCTestCase {
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             return UITableViewCell()
         }
-        
-        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 40
-        }
     }
-
 }
 

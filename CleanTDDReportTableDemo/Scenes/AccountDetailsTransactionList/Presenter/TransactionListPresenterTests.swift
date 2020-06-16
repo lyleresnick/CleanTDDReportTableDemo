@@ -45,7 +45,7 @@ class TransactionListPresenterTests: XCTestCase {
 
         var showReportCalled = false
 
-        func showReport() {
+        func showReport(rows: [TransactionListRowViewModel]) {
             showReportCalled = true
         }
 

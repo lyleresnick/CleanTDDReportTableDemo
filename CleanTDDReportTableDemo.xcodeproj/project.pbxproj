@@ -10,7 +10,6 @@
 		B314AAF71EB147ED00C8CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AAF61EB147ED00C8CF1F /* AppDelegate.swift */; };
 		B314AAFE1EB147ED00C8CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B314AAFD1EB147ED00C8CF1F /* Assets.xcassets */; };
 		B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AAFF1EB147ED00C8CF1F /* LaunchScreen.storyboard */; };
-		B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */; };
 		B314AB4E1EB1485200C8CF1F /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1D1EB1485200C8CF1F /* TransactionEntity.swift */; };
 		B314AB4F1EB1485200C8CF1F /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB1E1EB1485200C8CF1F /* TransactionGroup.swift */; };
 		B314AB501EB1485200C8CF1F /* EntityGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB201EB1485200C8CF1F /* EntityGateway.swift */; };
@@ -21,7 +20,7 @@
 		B314AB571EB1485200C8CF1F /* TransactionListConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2B1EB1485200C8CF1F /* TransactionListConnector.swift */; };
 		B314AB591EB1485200C8CF1F /* TransactionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */; };
 		B314AB5A1EB1485200C8CF1F /* TransactionListPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */; };
-		B314AB5C1EB1485200C8CF1F /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB311EB1485200C8CF1F /* TransactionListViewModel.swift */; };
+		B314AB5C1EB1485200C8CF1F /* TransactionListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB311EB1485200C8CF1F /* TransactionListRowViewModel.swift */; };
 		B314AB5D1EB1485200C8CF1F /* TransactionListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB331EB1485200C8CF1F /* TransactionListUseCase.swift */; };
 		B314AB5E1EB1485200C8CF1F /* TransactionListViewReadyOneSourceUseCaseTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB341EB1485200C8CF1F /* TransactionListViewReadyOneSourceUseCaseTransformer.swift */; };
 		B314AB601EB1485200C8CF1F /* TransactionListViewReadyTwoSourceUseCaseTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314AB361EB1485200C8CF1F /* TransactionListViewReadyTwoSourceUseCaseTransformer.swift */; };
@@ -81,7 +80,6 @@
 		B314AB071EB147ED00C8CF1F /* CleanTDDReportTableDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTDDReportTableDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B314AB0D1EB147ED00C8CF1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B314AB161EB1485200C8CF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B314AB191EB1485200C8CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B314AB1D1EB1485200C8CF1F /* TransactionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionEntity.swift; sourceTree = "<group>"; };
 		B314AB1E1EB1485200C8CF1F /* TransactionGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionGroup.swift; sourceTree = "<group>"; };
 		B314AB201EB1485200C8CF1F /* EntityGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityGateway.swift; sourceTree = "<group>"; };
@@ -96,7 +94,7 @@
 		B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListPresenter.swift; sourceTree = "<group>"; };
 		B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListPresenterOutput.swift; sourceTree = "<group>"; };
 		B314AB301EB1485200C8CF1F /* TransactionListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListPresenterTests.swift; sourceTree = "<group>"; };
-		B314AB311EB1485200C8CF1F /* TransactionListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		B314AB311EB1485200C8CF1F /* TransactionListRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListRowViewModel.swift; sourceTree = "<group>"; };
 		B314AB331EB1485200C8CF1F /* TransactionListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListUseCase.swift; sourceTree = "<group>"; };
 		B314AB341EB1485200C8CF1F /* TransactionListViewReadyOneSourceUseCaseTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewReadyOneSourceUseCaseTransformer.swift; sourceTree = "<group>"; };
 		B314AB351EB1485200C8CF1F /* TransactionListViewReadyUseCaseTransformerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListViewReadyUseCaseTransformerTests.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 		B314AAF51EB147ED00C8CF1F /* CleanTDDReportTableDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */,
 				B348D6E61EB7FD8000BC010E /* DateFormatter+Format.swift */,
 				B314AB731EB1485C00C8CF1F /* Color.swift */,
 				B314AB161EB1485200C8CF1F /* Assets.xcassets */,
@@ -266,7 +263,7 @@
 				B314AB2E1EB1485200C8CF1F /* TransactionListPresenter.swift */,
 				B314AB301EB1485200C8CF1F /* TransactionListPresenterTests.swift */,
 				B314AB2F1EB1485200C8CF1F /* TransactionListPresenterOutput.swift */,
-				B314AB311EB1485200C8CF1F /* TransactionListViewModel.swift */,
+				B314AB311EB1485200C8CF1F /* TransactionListRowViewModel.swift */,
 				B34B042A1F12C1F100D96D90 /* TransactionListViewModelTests.swift */,
 				B3C5026D1F5C79A90018D14A /* TransactionListViewReadyPresenterOutput.swift */,
 			);
@@ -383,10 +380,9 @@
 			};
 			buildConfigurationList = B314AAEE1EB147ED00C8CF1F /* Build configuration list for PBXProject "CleanTDDReportTableDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -409,7 +405,6 @@
 				B314AB721EB1485200C8CF1F /* Main.storyboard in Resources */,
 				B314AB011EB147ED00C8CF1F /* LaunchScreen.storyboard in Resources */,
 				B314AAFE1EB147ED00C8CF1F /* Assets.xcassets in Resources */,
-				B314AB4C1EB1485200C8CF1F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +443,7 @@
 				B314AB661EB1485200C8CF1F /* TransactionListGrandFooterCell.swift in Sources */,
 				B314AB501EB1485200C8CF1F /* EntityGateway.swift in Sources */,
 				B3C5026C1F5C79380018D14A /* TransactionListViewReadyUseCaseOutput.swift in Sources */,
-				B314AB5C1EB1485200C8CF1F /* TransactionListViewModel.swift in Sources */,
+				B314AB5C1EB1485200C8CF1F /* TransactionListRowViewModel.swift in Sources */,
 				B314AB6F1EB1485200C8CF1F /* TransactionListViewController.swift in Sources */,
 				B366CD7C1F1141A1001E1FC1 /* OneSourceManager.swift in Sources */,
 				B314AB681EB1485200C8CF1F /* TransactionListMessageCell.swift in Sources */,
@@ -503,15 +498,6 @@
 				B314AB001EB147ED00C8CF1F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B314AB181EB1485200C8CF1F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B314AB191EB1485200C8CF1F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

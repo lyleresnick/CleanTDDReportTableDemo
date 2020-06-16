@@ -4,7 +4,7 @@
 import UIKit
 
 protocol TransactionListCell {
-    func show( row: TransactionListViewModel )
+    func show( row: TransactionListRowViewModel )
 }
 
 extension TransactionListCell where Self: UITableViewCell {

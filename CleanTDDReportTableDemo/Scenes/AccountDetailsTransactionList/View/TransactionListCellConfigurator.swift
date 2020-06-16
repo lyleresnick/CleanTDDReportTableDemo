@@ -6,23 +6,21 @@ class TransactionListCellConfigurator {
     
     private(set) var tableView: UITableView!
     private(set) var indexPath: IndexPath!
-    private(set) var presenter: TransactionListPresenter!
     
-    func set(tableView: UITableView, indexPath: IndexPath, presenter: TransactionListPresenter) -> Self {
+    func set(tableView: UITableView, indexPath: IndexPath) -> Self {
         self.tableView = tableView
         self.indexPath = indexPath
-        self.presenter = presenter
         return self;
     }
     
-    func show(row: TransactionListViewModel) -> UITableViewCell {
-        let cell = tableCell(presenter: presenter)
+    func show(row: TransactionListRowViewModel) -> UITableViewCell {
+        let cell = tableCell(row: row)
         (cell as! TransactionListCell).show(row: row)
         return cell
     }
     
-    func tableCell(presenter: TransactionListPresenter) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: presenter.cellId(at: indexPath.row), for: indexPath)
+    func tableCell(row: TransactionListRowViewModel) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: row.cellId, for: indexPath)
     }
 }
 

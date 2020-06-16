@@ -6,7 +6,7 @@ class TransactionListGrandFooterCell: UITableViewCell, TransactionListCell {
     
     @IBOutlet private var totalLabel: UILabel!
     
-    func show(row: TransactionListViewModel) {
+    func show(row: TransactionListRowViewModel) {
         
         guard case let .grandfooter(total) = row else { fatalError("Expected: grandfooter") }
         totalLabel.text = total

@@ -8,8 +8,8 @@ class TransactionListPresenter {
     
     static let outboundDateFormatter = DateFormatter.dateFormatter( format: "MMM' 'dd', 'yyyy" )
 
-    fileprivate var rows = [TransactionListViewModel]()
-    fileprivate(set) var odd = false
+    private var rows = [TransactionListRowViewModel]()
+    private var odd = false
     
     private let useCase: TransactionListUseCase
     
@@ -20,18 +20,6 @@ class TransactionListPresenter {
     func eventViewReady() {
         useCase.eventViewReady()
     }
-    
-    func cellId(at index: Int) -> String {
-        return rows[ index ].cellId
-    }
-    
-    func cellHeight(at index: Int) -> CGFloat {
-        return rows[ index ].height
-    }
-    
-    var rowCount: Int { return rows.count }
-    
-    func row(at index: Int) -> TransactionListViewModel { return rows[ index ] }
 }
 
 
@@ -49,7 +37,7 @@ extension TransactionListPresenter: TransactionListViewReadyUseCaseOutput {
     }
 
      func presentReport() {
-        output.showReport()
+        output.showReport(rows: rows)
     }
 
     func presentHeader(group: TransactionGroup) {
@@ -113,63 +101,4 @@ private extension Double {
         return String(format: "%0.2f", self)
     }
 }
-
-//MARK: -
-
-private extension TransactionListViewModel {
-    
-    var cellId: String {
-        return {
-            () -> CellId in
-            switch self {
-            case .header:
-                return .header
-            case .subheader:
-                return .subheader
-            case  .detail:
-                return .detail
-            case .message:
-                return .message
-            case .footer:
-                return .footer
-            case .grandfooter:
-                return .grandfooter
-            case .subfooter:
-                return .subfooter
-            }
-        } ().rawValue
-    }
-
-    private enum CellId: String {
-        case header
-        case subheader
-        case detail
-        case subfooter
-        case footer
-        case grandfooter
-        case message
-    }
-
-    var height: CGFloat {
-        get {
-            switch self {
-            case .header:
-                return 60.0
-            case .subheader:
-                return 34.0
-            case .detail:
-                return 18.0
-            case .subfooter:
-                return 18.0
-            case .footer:
-                return 44.0
-            case .grandfooter:
-                return 60.0
-            case .message:
-                return 100.0
-            }
-        }
-    }
-}
-
 

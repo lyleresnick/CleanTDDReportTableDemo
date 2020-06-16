@@ -6,7 +6,7 @@ class TransactionListMessageCell: UITableViewCell, TransactionListCell {
     
     @IBOutlet private var messageLabel: UILabel!
     
-    func show(row: TransactionListViewModel) {
+    func show(row: TransactionListRowViewModel) {
         
         guard case let .message( message ) = row else { fatalError("Expected: message") }
         messageLabel.text = message

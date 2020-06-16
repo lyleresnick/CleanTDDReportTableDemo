@@ -12,13 +12,12 @@ class TransactionListViewController: UIViewController {
         super.awakeFromNib()
         
         TransactionListConnector(viewController: self).configure()
-        adapter = TransactionListAdapter(presenter: presenter)
+        adapter = TransactionListAdapter()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = adapter
         tableView.dataSource = adapter
 
         presenter.eventViewReady()
@@ -33,7 +32,8 @@ extension TransactionListViewController: TransactionListPresenterOutput {}
 
 extension TransactionListViewController: TransactionListViewReadyPresenterOutput {
     
-    func showReport() {
+    func showReport(rows: [TransactionListRowViewModel]) {
+        adapter.rows = rows
         tableView.reloadData()
     }
 }

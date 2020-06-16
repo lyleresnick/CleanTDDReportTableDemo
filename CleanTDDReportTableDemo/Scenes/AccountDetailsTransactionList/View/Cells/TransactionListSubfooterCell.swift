@@ -4,7 +4,7 @@ import UIKit
 
 class TransactionListSubfooterCell: UITableViewCell, TransactionListCell {
     
-    func show(row: TransactionListViewModel) {
+    func show(row: TransactionListRowViewModel) {
         
         guard case let .subfooter( odd ) = row else { fatalError("Expected: subfooter") }
         setBackgroundColour(odd: odd);
