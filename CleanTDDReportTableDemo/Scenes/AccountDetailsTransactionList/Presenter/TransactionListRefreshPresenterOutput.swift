@@ -1,5 +1,6 @@
 //  Copyright © 2017 Lyle Resnick. All rights reserved.
 
-protocol TransactionListViewReadyPresenterOutput: class {
+protocol TransactionListRefreshPresenterOutput: AnyObject {
+    func initialize()
     func showReport(rows: [TransactionListRowViewModel])
 }

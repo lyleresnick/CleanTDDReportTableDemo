@@ -3,41 +3,49 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListRefreshTwoSourceUseCaseTests: XCTestCase {
+class TransactionListRefeshOneSourceUseCaseTests: XCTestCase {
     private var sut: TransactionListUseCase!
     private var stubPresenter: StubTransactionListPresenter!
     private var entityGateway = FakeNilEntityGateway()
 
-    private var twoSourceTransformer: StubTransactionListRefreshTwoSourceUseCaseTransformer!
+    private var oneSourceTransformer: StubTransactionListUseCaseRefreshOneSourceTransformer!
 
     override func setUp() {
         super.setUp()
 
-        twoSourceTransformer = StubTransactionListRefreshTwoSourceUseCaseTransformer(transactionManager: FakeNoneManagerImpl())
+        oneSourceTransformer = StubTransactionListUseCaseRefreshOneSourceTransformer(transactionManager: FakeNoneManagerImpl())
 
         stubPresenter = StubTransactionListPresenter()
         sut = TransactionListUseCase(entityGateway: entityGateway)
         sut.output = stubPresenter
     }
 
-    func test_refreshTwoSource_CallsTransformerWithPresenter() {
-
-        sut.eventRefreshTwoSource(transformer: twoSourceTransformer)
-        XCTAssertTrue(twoSourceTransformer.output === stubPresenter)
+    func test_refreshOneSource_CallsTransformer() {
+        
+        sut.eventRefreshOneSource(transformer: oneSourceTransformer)
+        XCTAssertTrue(oneSourceTransformer.didCall)
+    }
+    
+    func test_refreshOneSource_CallsTransformerWithPresenter() {
+        
+        sut.eventRefreshOneSource(transformer: oneSourceTransformer)
+        XCTAssertTrue(oneSourceTransformer.presenter === stubPresenter)
     }
 
     // MARK: Stubs
 
-    class StubTransactionListRefreshTwoSourceUseCaseTransformer: TransactionListRefreshTwoSourceUseCaseTransformer {
-
-        var output: TransactionListUseCaseOutput!
-
-        override func transform( output: TransactionListRefreshUseCaseOutput ) {
-
-            self.output = output as? TransactionListUseCaseOutput
+    class StubTransactionListUseCaseRefreshOneSourceTransformer: TransactionListRefreshOneSourceUseCaseTransformer {
+        
+        var didCall = false
+        var presenter: TransactionListUseCaseOutput!
+        
+        override func transform( output presenter: TransactionListRefreshUseCaseOutput ) {
+            
+            didCall = true
+            self.presenter = presenter as? TransactionListUseCaseOutput
         }
     }
-
+    
     class StubTransactionListPresenter: TransactionListUseCaseOutput {
 
         func presentInit() {}

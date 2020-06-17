@@ -3,7 +3,7 @@
 
 import Foundation
 
-protocol TransactionListViewReadyUseCaseOutput: class {
+protocol TransactionListRefreshUseCaseOutput: AnyObject {
     
     func presentInit()
     func presentHeader(group: TransactionGroup)
@@ -14,9 +14,6 @@ protocol TransactionListViewReadyUseCaseOutput: class {
     func presentGrandFooter(grandTotal: Double)
     func presentNotFoundMessage(group: TransactionGroup)
     func presentNoTransactionsMessage(group: TransactionGroup)
-    
     func presentNotFoundMessage()
-    
     func presentReport()
-    
 }

@@ -20,11 +20,17 @@ class TransactionListPresenterTests: XCTestCase {
         sut.output = stubbedViewController
     }
 
-    func test_eventViewReady_CallsUseCase_viewReadyTwoSource() {
-        sut.eventViewReady()
-        XCTAssertTrue(stubbedUseCase.viewReadyCalled)
+    func test_eventRefresh_CallsUseCase_refreshTwoSource() {
+        sut.eventRefreshTwoSource()
+        XCTAssertTrue(stubbedUseCase.refreshCalled)
     }
     
+    
+    func test_presentInit_callsInitialize() {
+        sut.presentInit()
+        XCTAssertTrue(stubbedViewController.initializeCalled )
+    }
+
     func test_presentReport_callsShowReport() {
         sut.presentReport()
         XCTAssertTrue(stubbedViewController.showReportCalled )
@@ -34,17 +40,22 @@ class TransactionListPresenterTests: XCTestCase {
 
     class StubTransactionListUseCase: TransactionListUseCase {
 
-        var viewReadyCalled = false
+        var refreshCalled = false
 
-        override func eventViewReady(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer?) {
-            viewReadyCalled = true
+        override func eventRefreshTwoSource(transformer: TransactionListRefreshTwoSourceUseCaseTransformer?) {
+            refreshCalled = true
         }
     }
 
     class StubViewController: TransactionListPresenterOutput {
 
+        var initializeCalled = false
         var showReportCalled = false
 
+        func initialize() {
+            initializeCalled = true
+        }
+        
         func showReport(rows: [TransactionListRowViewModel]) {
             showReportCalled = true
         }

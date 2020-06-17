@@ -32,17 +32,18 @@ class TransactionListViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.tableView.dataSource === sut.adapter)
     }
     
-    func test_viewDidLoad_CallsPresenterEventViewReady() {
+    func test_viewDidLoad_CallsPresenterEventRefresh() {
         
-        XCTAssertTrue(stubPresenter.viewReadyCalled)
+        XCTAssertTrue(stubPresenter.refreshCalled)
     }
     
     func test_showReport_CallsTableViewGetRowCount() {
         sut.showReport(rows: [])
-        let dataSource = sut.tableView.dataSource as! StubTransactionListAdapter
-        XCTAssertTrue(dataSource.adapterCalled)
+        DispatchQueue.main.async {
 
-        
+            let dataSource = self.sut.tableView.dataSource as! StubTransactionListAdapter
+            XCTAssertTrue(dataSource.adapterCalled)
+        }
     }
         
     // MARK: Stubs
@@ -60,10 +61,10 @@ class TransactionListViewControllerTests: XCTestCase {
 
     class StubTransactionListPresenter: TransactionListPresenter {
         
-        var viewReadyCalled = false
+        var refreshCalled = false
         
-        override func eventViewReady() {
-            viewReadyCalled = true
+        override func eventRefreshTwoSource() {
+            refreshCalled = true
         }
     }
     

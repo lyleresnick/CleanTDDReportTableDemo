@@ -7,6 +7,8 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
 
     private var sut: TransactionListViewController!
     private var tableView: UITableView!
+    private let cellConfigurator = TransactionListCellConfigurator()
+
 
     override func setUp() {
         super.setUp()
@@ -28,9 +30,8 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
     
     func test_tableView_CanDequeueAllCellIds() {
         
-        for cellId in ["header", "subheader", "detail", "subfooter", "footer", "grandfooter", "message"] {
-        
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        for cellId in TransactionListRowViewModel.CellId.allCases {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellId.rawValue)
             XCTAssertNotNil(cell, "Can't dequeue cellId: \(cellId)" )
         }
     }
@@ -78,4 +79,15 @@ class TransactionViewerViewControllerIBInjectionTests: XCTestCase {
         let messageLabel = cell.value(forKey: "messageLabel")
         XCTAssertNotNil(messageLabel)
     }
+    
+    func test_tableCell_ReturnsCorrectCellType() {
+        
+        let _ = cellConfigurator.set(tableView: tableView, indexPath: IndexPath(row: 0, section: 0))
+        let row =  TransactionListRowViewModel.header(title: "test")
+        let cell = cellConfigurator.tableCell(row: row)
+        XCTAssertTrue(cell is TransactionListHeaderCell)
+    }
+
 }
+
+

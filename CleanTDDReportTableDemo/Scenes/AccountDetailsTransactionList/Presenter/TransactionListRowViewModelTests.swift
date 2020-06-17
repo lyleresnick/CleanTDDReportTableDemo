@@ -3,14 +3,15 @@
 import XCTest
 @testable import CleanTDDReportTableDemo
 
-class TransactionListViewModelTests: XCTestCase, TransactionListPresenterOutput {
-    
+class TransactionListRowViewModelTests: XCTestCase, TransactionListPresenterOutput {
     var rows = [TransactionListRowViewModel]()
     
+    func initialize() {
+    }
+
     func showReport(rows: [TransactionListRowViewModel]) {
         self.rows = rows
     }
-    
     
     private var sut: TransactionListPresenter!
     
