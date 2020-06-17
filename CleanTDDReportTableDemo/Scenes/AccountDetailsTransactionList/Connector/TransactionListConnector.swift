@@ -16,7 +16,7 @@ class TransactionListConnector {
         self.useCase = useCase
     }
     
-    convenience init(viewController: TransactionListViewController, entityGateway: EntityGateway = EntityGatewayFactory.makeEntityGateway()) {
+    convenience init(viewController: TransactionListViewController, entityGateway: EntityGateway = EntityGatewayFactory.gateway) {
         
         let useCase = TransactionListUseCase(entityGateway: entityGateway)
         let presenter = TransactionListPresenter(useCase: useCase)

@@ -17,8 +17,12 @@ class TransactionListPresenter {
         self.useCase = useCase
     }
 
-    func eventViewReady() {
-        useCase.eventViewReady()
+    func eventRefreshTwoSource() {
+        useCase.eventRefreshTwoSource()
+    }
+    
+    func eventRefreshOneSource() {
+        useCase.eventRefreshOneSource()
     }
 }
 
@@ -27,13 +31,14 @@ class TransactionListPresenter {
 
 extension TransactionListPresenter: TransactionListUseCaseOutput {}
 
-// MARK: TransactionListViewReadyUseCaseOutput
+// MARK: TransactionListRefreshUseCaseOutput
 
-extension TransactionListPresenter: TransactionListViewReadyUseCaseOutput {
+extension TransactionListPresenter: TransactionListRefreshUseCaseOutput {
     
     func presentInit() {
         odd = false
         rows.removeAll()
+        output.initialize()
     }
 
      func presentReport() {
@@ -91,14 +96,5 @@ extension TransactionListPresenter: TransactionListViewReadyUseCaseOutput {
         rows.append(.message(message: "Transactions are not currently available."))
     }
 
-}
-
-
-//MARK: -
-
-private extension Double {
-    var asString: String {
-        return String(format: "%0.2f", self)
-    }
 }
 

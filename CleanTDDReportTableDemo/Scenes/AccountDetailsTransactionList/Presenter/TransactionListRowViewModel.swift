@@ -10,9 +10,6 @@ enum TransactionListRowViewModel {
     case footer(total: String, odd: Bool)
     case grandfooter(total: String)
     case message(message: String)
-}
-
-extension TransactionListRowViewModel {
     
     var cellId: String {
         return {
@@ -36,7 +33,7 @@ extension TransactionListRowViewModel {
         } ().rawValue
     }
 
-    private enum CellId: String {
+    enum CellId: String, CaseIterable {
         case header
         case subheader
         case detail

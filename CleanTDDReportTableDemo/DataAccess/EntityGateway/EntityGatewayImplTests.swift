@@ -10,12 +10,11 @@ class EntityGatewayImplTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        sut = EntityGatewayImpl()
+        sut = TestEntityGateway()
     }
     
     func test_Init_SetsDefaultManagers() {
         
-        XCTAssertNotNil(sut.oneSourceManager)
-        XCTAssertNotNil(sut.twoSourceManager)
+        XCTAssertNotNil(sut.transactionManager)
     }
 }

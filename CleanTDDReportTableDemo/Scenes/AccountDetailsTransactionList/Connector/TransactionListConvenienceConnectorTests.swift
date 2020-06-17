@@ -17,7 +17,7 @@ class TransactionListConvenienceConnectorTests: XCTestCase {
         
         controller = TransactionListViewController()
         
-        sut = TransactionListConnector(viewController: controller, entityGateway: EntityGatewayFactory.makeEntityGateway())
+        sut = TransactionListConnector(viewController: controller, entityGateway: EntityGatewayFactory.gateway)
         sut.configure()
     }
     
@@ -26,7 +26,7 @@ class TransactionListConvenienceConnectorTests: XCTestCase {
     }
     
     func test_Init_SetsEntityGateway() {
-        XCTAssertTrue(sut.useCase.entityGateway === fakeNilEntityGateway)
+        XCTAssertTrue(sut.useCase.entityGateway as AnyObject === fakeNilEntityGateway)
     }
     
     func test_Configure_SetsControllersPresenter() {

@@ -12,20 +12,20 @@ class TransactionListUseCase {
         self.entityGateway = entityGateway
     }
     
-    func eventViewReady(transformer: TransactionListViewReadyTwoSourceUseCaseTransformer? = nil) {
+    func eventRefreshTwoSource(transformer: TransactionListRefreshTwoSourceUseCaseTransformer? = nil) {
         
         var transformer = transformer
         if transformer == nil {
-            transformer = TransactionListViewReadyTwoSourceUseCaseTransformer(transactionManager: entityGateway.twoSourceManager)
+            transformer = TransactionListRefreshTwoSourceUseCaseTransformer(transactionManager: entityGateway.transactionManager)
         }
         transformer!.transform(output: output)
     }
     
-    func eventViewReadyOneSource(transformer: TransactionListViewReadyOneSourceUseCaseTransformer? = nil) {
+    func eventRefreshOneSource(transformer: TransactionListRefreshOneSourceUseCaseTransformer? = nil) {
         
         var transformer = transformer
         if transformer == nil {
-            transformer = TransactionListViewReadyOneSourceUseCaseTransformer(transactionManager: entityGateway.oneSourceManager)
+            transformer = TransactionListRefreshOneSourceUseCaseTransformer(transactionManager: entityGateway.transactionManager)
         }
         transformer!.transform(output: output)
     }

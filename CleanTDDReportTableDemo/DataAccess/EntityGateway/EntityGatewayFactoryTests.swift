@@ -12,10 +12,10 @@ class EntityGatewayFactoryTests: XCTestCase {
         super.setUp()
         
         EntityGatewayFactory.gateway = nilGateway
-        sut = EntityGatewayFactory.makeEntityGateway()
+        sut = EntityGatewayFactory.gateway
     }
     
     func test_Make_ReturnsEntityGatewayImpl() {
-        XCTAssert(sut === nilGateway)
+        XCTAssert(sut as AnyObject === nilGateway as AnyObject)
     }
 }

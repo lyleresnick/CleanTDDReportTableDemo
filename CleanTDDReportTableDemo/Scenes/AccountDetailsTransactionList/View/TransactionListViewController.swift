@@ -2,11 +2,12 @@
 
 import UIKit
 
-class TransactionListViewController: UIViewController {
+class TransactionListViewController: UIViewController, SpinnerAttachable {
 
     var presenter: TransactionListPresenter! 
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
     var adapter: TransactionListAdapter!
+    private var spinnerView: UIActivityIndicatorView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,8 +20,12 @@ class TransactionListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = adapter
+        spinnerView = attachSpinner()
+        spinnerView.hidesWhenStopped = true
 
-        presenter.eventViewReady()
+        presenter.eventRefreshTwoSource()
+//        presenter.eventRefreshOneSource()
+
     }
 }
 
@@ -28,13 +33,22 @@ class TransactionListViewController: UIViewController {
 
 extension TransactionListViewController: TransactionListPresenterOutput {}
     
-// MARK: - TransactionListViewReadyPresenterOutput
+// MARK: - TransactionListRefreshPresenterOutput
 
-extension TransactionListViewController: TransactionListViewReadyPresenterOutput {
+extension TransactionListViewController: TransactionListRefreshPresenterOutput {
+    
+    func initialize() {
+        DispatchQueue.main.async {
+            self.spinnerView.startAnimating()
+        }
+    }
     
     func showReport(rows: [TransactionListRowViewModel]) {
-        adapter.rows = rows
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.spinnerView.stopAnimating()
+            self.adapter.rows = rows
+            self.tableView.reloadData()
+        }
     }
 }
 
