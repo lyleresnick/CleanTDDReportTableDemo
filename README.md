@@ -6,7 +6,7 @@ This demonstation app, which is a refactoring of the [CleanReportTableDemo](http
 
 Besides the addition of tests, this demo presents a slight refactoring of CleanReportTableDemo due to the application of TDD.
 
-Testing a ViewController is normally pretty complicated. The use of VIPER makes testing a view controller very straightforward. 
+Testing a ViewController is normally pretty complicated. The use of Clean Architecture makes testing a view controller very straightforward. 
 
 Besides the Adapter, Presenter, UseCase and Transformer classes that were introduced in CleanReportTableDemo, new classes have been added to make Unit Testing simpler.
 
